@@ -26,6 +26,12 @@ namespace SJ_Botique_System.Entities
 
             return true;
         }
+        public CardCategory(int _id,string _description)
+        {
+            this.Id = _id;
+            this.Description = _description;
+
+        }
 
     }
     public class Platinum:CardCategory
@@ -41,8 +47,13 @@ namespace SJ_Botique_System.Entities
         
         }
 
+       public Platinum(int _id, string _description,double _discountpercent) :base(_id, _description)
+        {
+            this.Id = _id;
+            this.Description = _description;
+            this.DiscountPercent = _discountpercent;
 
-
+        }
     }
     public class Gold: CardCategory
     {
@@ -57,7 +68,13 @@ namespace SJ_Botique_System.Entities
 
         }
 
+        public Gold(int _id, string _description, double _discountpercent) : base(_id, _description)
+        {
+            this.Id = _id;
+            this.Description = _description;
+            this.DiscountPercent = _discountpercent;
 
+        }
 
     }
     public class Silver : CardCategory
@@ -72,7 +89,13 @@ namespace SJ_Botique_System.Entities
             return this.DiscountPercent;
 
         }
+        public Silver(int _id, string _description, double _discountpercent) : base(_id, _description)
+        {
+            this.Id = _id;
+            this.Description = _description;
+            this.DiscountPercent = _discountpercent;
 
+        }
 
 
     }
