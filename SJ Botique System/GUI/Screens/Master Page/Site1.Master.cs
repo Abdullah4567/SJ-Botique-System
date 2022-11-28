@@ -11,7 +11,12 @@ namespace SJ_Botique_System.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
+        protected void LinkButton12_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Created By.aspx");
+        }
+        
     }
 }

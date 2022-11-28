@@ -14,11 +14,13 @@
     <%--jquery--%>
     <script src="../../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
      <%--my custom stylesheet--%>
-    <link href="../../css/customstylesheet.css" rel="stylesheet" />
+    <link href="../../mycss/customstylesheet.css" rel="stylesheet" />
     <%--popper js--%>
     <script src="../../bootstrap/js/popper.min.js"></script>
     <%--bootstrap js--%>
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
+    <%--mycustomjs--%>
+    <script src="../../myjs/mycustomjs.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,7 +30,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">
                     <!--<img src="../../imgs/SJ%20Boutique.png" />-->
-                    S & J Boutique
+                 S & J Boutique
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,12 +50,12 @@
 
                     <ul class="navbar-nav">
                         
-                        <li class="nav-item active">
+                   <!--     <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">Login</asp:LinkButton>
-                        </li>
-                        <li class="nav-item active">
+                        </li>  -->
+                    <!--    <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Sign Up</asp:LinkButton>
-                        </li>
+                        </li>  -->
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Logout</asp:LinkButton>
                         </li>
@@ -86,7 +88,7 @@
                             &nbsp;
                             <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Frequently Asked Questions</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server">Created By</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click">">Created By</asp:LinkButton>
                             &nbsp;
                         </p>
 
@@ -97,7 +99,7 @@
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">&copy All right Reversed. &nbsp&nbsp<i class="fa-brands fa-facebook mr-auto"></i>&nbsp&nbsp<i class="fa-brands fa-whatsapp mr-auto"></i>&nbsp&nbsp<i class="fa-brands fa-instagram mr-auto"></i></p>
+                        <p style="color:whitesmoke">&copy All right Reserved. &nbsp&nbsp<i class="fa-brands fa-facebook mr-auto"></i>&nbsp&nbsp<i class="fa-brands fa-whatsapp mr-auto"></i>&nbsp&nbsp<i class="fa-brands fa-instagram mr-auto"></i></p>
                     </div>
                 </div>
             </div>

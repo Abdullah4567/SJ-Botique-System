@@ -117,7 +117,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="GUI\css\customstylesheet.css" />
+    <Content Include="GUI\imgs\created-by.png" />
+    <Content Include="GUI\mycss\customstylesheet.css" />
     <Content Include="GUI\datatables\css\jquery.dataTables.min.css" />
     <Content Include="GUI\datatables\js\jquery.dataTables.min.js" />
     <Content Include="Default.aspx" />
@@ -2177,9 +2178,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="GUI\imgs\footer-home.png" />
-    <Content Include="GUI\imgs\generaluser.png" />
-    <Content Include="GUI\imgs\title-home.png" />
+    <Content Include="GUI\imgs\bottom-img-home.png" />
+    <Content Include="GUI\imgs\user.png" />
+    <Content Include="GUI\imgs\upper-img-home.png" />
+    <Content Include="GUI\imgs\center-img-home.png" />
+    <Content Include="GUI\myjs\mycustomjs.js" />
     <Content Include="GUI\Screens\Master Page\Site1.Master" />
     <Content Include="GUI\fontawesome\less\brands.less" />
     <Content Include="GUI\fontawesome\less\fontawesome.less" />
@@ -2234,6 +2237,8 @@
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="GUI\Screens\Master Page\HomePage.aspx" />
+    <Content Include="GUI\Screens\Master Page\Login.aspx" />
+    <Content Include="GUI\Screens\Master Page\Created By.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2311,6 +2316,20 @@
     </Compile>
     <Compile Include="GUI\Screens\Master Page\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Master Page\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Master Page\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Master Page\Created By.aspx.cs">
+      <DependentUpon>Created By.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Master Page\Created By.aspx.designer.cs">
+      <DependentUpon>Created By.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
