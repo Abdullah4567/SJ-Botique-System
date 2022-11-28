@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using SJ_Botique_System.Interfaces;
 
 namespace SJ_Botique_System.Entities
 {
@@ -75,12 +76,17 @@ namespace SJ_Botique_System.Entities
         }
         public void AddRole(Role _role)
         {
-            this.Roles.Add(_role);
-            this.Roles.Distinct().ToList(); // to remove duplicate roles
+            if (!this.Roles.Contains(_role))
+            {
+                this.Roles.Add(_role);
+            }
         }
         public void DeleteRole(Role _role)
         {
-            this.Roles.Remove(_role); // removing role
+            if(this.Roles.Contains(_role))
+            {
+                this.Roles.Remove(_role); // removing role
+            }
         }
         public User(string _name,int _age, string _address,string _email,string _password, string _contact)
         {
