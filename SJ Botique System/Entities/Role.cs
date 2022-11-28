@@ -39,12 +39,12 @@ namespace SJ_Botique_System.Entities
         {
             this.Description = _description;
         }
-        public void AddRole(Permission _permission)
+        public void AddPermission(Permission _permission)
         {
             this.Permissions.Add(_permission);
             this.Permissions = this.Permissions.Distinct().ToList(); // to remove redundancy 
         }
-        public void DeleteRole(Permission _permission)
+        public void DeletePermission(Permission _permission)
         {
             this.Permissions.Remove(_permission);
         }
