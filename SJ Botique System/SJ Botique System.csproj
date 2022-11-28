@@ -107,22 +107,96 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="GUI\bootstrap\css\bootstrap.min.css" />
-    <Content Include="GUI\bootstrap\js\bootstrap.min.js" />
-    <Content Include="GUI\bootstrap\js\jquery-3.3.1.slim.min.js" />
-    <Content Include="GUI\bootstrap\js\popper.min.js" />
+    <Content Include="bin\SJ Botique System.dll" />
+    <Content Include="bin\SJ Botique System.pdb" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="GUI\imgs\created-by.png" />
-    <Content Include="GUI\mycss\customstylesheet.css" />
-    <Content Include="GUI\datatables\css\jquery.dataTables.min.css" />
-    <Content Include="GUI\datatables\js\jquery.dataTables.min.js" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <Content Include="GUI\fontawesome\less\brands.less" />
+    <Content Include="GUI\fontawesome\less\fontawesome.less" />
+    <Content Include="GUI\fontawesome\less\regular.less" />
+    <Content Include="GUI\fontawesome\less\solid.less" />
+    <Content Include="GUI\fontawesome\less\v4-shims.less" />
+    <Content Include="GUI\fontawesome\less\_animated.less" />
+    <Content Include="GUI\fontawesome\less\_bordered-pulled.less" />
+    <Content Include="GUI\fontawesome\less\_core.less" />
+    <Content Include="GUI\fontawesome\less\_fixed-width.less" />
+    <Content Include="GUI\fontawesome\less\_icons.less" />
+    <Content Include="GUI\fontawesome\less\_list.less" />
+    <Content Include="GUI\fontawesome\less\_mixins.less" />
+    <Content Include="GUI\fontawesome\less\_rotated-flipped.less" />
+    <Content Include="GUI\fontawesome\less\_screen-reader.less" />
+    <Content Include="GUI\fontawesome\less\_shims.less" />
+    <Content Include="GUI\fontawesome\less\_sizing.less" />
+    <Content Include="GUI\fontawesome\less\_stacked.less" />
+    <Content Include="GUI\fontawesome\less\_variables.less" />
+    <Content Include="GUI\fontawesome\metadata\categories.yml" />
+    <Content Include="GUI\fontawesome\metadata\icons.json" />
+    <Content Include="GUI\fontawesome\metadata\icons.yml" />
+    <Content Include="GUI\fontawesome\metadata\shims.json" />
+    <Content Include="GUI\fontawesome\metadata\shims.yml" />
+    <Content Include="GUI\fontawesome\metadata\sponsors.yml" />
+    <Content Include="GUI\fontawesome\scss\brands.scss" />
+    <Content Include="GUI\fontawesome\scss\fontawesome.scss" />
+    <Content Include="GUI\fontawesome\scss\regular.scss" />
+    <Content Include="GUI\fontawesome\scss\solid.scss" />
+    <Content Include="GUI\fontawesome\scss\v4-shims.scss" />
+    <Content Include="GUI\fontawesome\scss\_animated.scss" />
+    <Content Include="GUI\fontawesome\scss\_bordered-pulled.scss" />
+    <Content Include="GUI\fontawesome\scss\_core.scss" />
+    <Content Include="GUI\fontawesome\scss\_fixed-width.scss" />
+    <Content Include="GUI\fontawesome\scss\_functions.scss" />
+    <Content Include="GUI\fontawesome\scss\_icons.scss" />
+    <Content Include="GUI\fontawesome\scss\_list.scss" />
+    <Content Include="GUI\fontawesome\scss\_mixins.scss" />
+    <Content Include="GUI\fontawesome\scss\_rotated-flipped.scss" />
+    <Content Include="GUI\fontawesome\scss\_screen-reader.scss" />
+    <Content Include="GUI\fontawesome\scss\_shims.scss" />
+    <Content Include="GUI\fontawesome\scss\_sizing.scss" />
+    <Content Include="GUI\fontawesome\scss\_stacked.scss" />
+    <Content Include="GUI\fontawesome\scss\_variables.scss" />
+    <Content Include="GUI\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="GUI\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="GUI\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="GUI\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="GUI\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="GUI\Screens\Master Page\Site1.Master" />
+    <Content Include=".vs\ProjectSettings.json" />
+    <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />
+    <Content Include=".vs\slnx.sqlite" />
+    <Content Include=".vs\VSWorkspaceState.json" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\SJ Botique System.csproj.CopyComplete" />
+    <Content Include="obj\Debug\SJ Botique System.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\SJ Botique System.csprojAssemblyReference.cache" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="GUI\bootstrap\css\bootstrap.min.css" />
+    <Content Include="GUI\bootstrap\js\bootstrap.min.js" />
+    <Content Include="GUI\bootstrap\js\jquery-3.3.1.slim.min.js" />
+    <Content Include="GUI\bootstrap\js\popper.min.js" />
+    <Content Include="GUI\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="GUI\datatables\js\jquery.dataTables.min.js" />
     <Content Include="GUI\fontawesome\css\all.css" />
     <Content Include="GUI\fontawesome\css\all.min.css" />
     <Content Include="GUI\fontawesome\css\brands.css" />
@@ -2168,77 +2242,20 @@
     <Content Include="GUI\fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="GUI\fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="GUI\fontawesome\svgs\solid\z.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="GUI\HomeScreen\Home.aspx" />
     <Content Include="GUI\imgs\bottom-img-home.png" />
-    <Content Include="GUI\imgs\user.png" />
-    <Content Include="GUI\imgs\upper-img-home.png" />
     <Content Include="GUI\imgs\center-img-home.png" />
+    <Content Include="GUI\imgs\created-by.png" />
+    <Content Include="GUI\imgs\upper-img-home.png" />
+    <Content Include="GUI\imgs\user.png" />
+    <Content Include="GUI\mycss\customstylesheet.css" />
     <Content Include="GUI\myjs\mycustomjs.js" />
-    <Content Include="GUI\Screens\Master Page\Site1.Master" />
-    <Content Include="GUI\fontawesome\less\brands.less" />
-    <Content Include="GUI\fontawesome\less\fontawesome.less" />
-    <Content Include="GUI\fontawesome\less\regular.less" />
-    <Content Include="GUI\fontawesome\less\solid.less" />
-    <Content Include="GUI\fontawesome\less\v4-shims.less" />
-    <Content Include="GUI\fontawesome\less\_animated.less" />
-    <Content Include="GUI\fontawesome\less\_bordered-pulled.less" />
-    <Content Include="GUI\fontawesome\less\_core.less" />
-    <Content Include="GUI\fontawesome\less\_fixed-width.less" />
-    <Content Include="GUI\fontawesome\less\_icons.less" />
-    <Content Include="GUI\fontawesome\less\_list.less" />
-    <Content Include="GUI\fontawesome\less\_mixins.less" />
-    <Content Include="GUI\fontawesome\less\_rotated-flipped.less" />
-    <Content Include="GUI\fontawesome\less\_screen-reader.less" />
-    <Content Include="GUI\fontawesome\less\_shims.less" />
-    <Content Include="GUI\fontawesome\less\_sizing.less" />
-    <Content Include="GUI\fontawesome\less\_stacked.less" />
-    <Content Include="GUI\fontawesome\less\_variables.less" />
-    <Content Include="GUI\fontawesome\metadata\categories.yml" />
-    <Content Include="GUI\fontawesome\metadata\icons.json" />
-    <Content Include="GUI\fontawesome\metadata\icons.yml" />
-    <Content Include="GUI\fontawesome\metadata\shims.json" />
-    <Content Include="GUI\fontawesome\metadata\shims.yml" />
-    <Content Include="GUI\fontawesome\metadata\sponsors.yml" />
-    <Content Include="GUI\fontawesome\scss\brands.scss" />
-    <Content Include="GUI\fontawesome\scss\fontawesome.scss" />
-    <Content Include="GUI\fontawesome\scss\regular.scss" />
-    <Content Include="GUI\fontawesome\scss\solid.scss" />
-    <Content Include="GUI\fontawesome\scss\v4-shims.scss" />
-    <Content Include="GUI\fontawesome\scss\_animated.scss" />
-    <Content Include="GUI\fontawesome\scss\_bordered-pulled.scss" />
-    <Content Include="GUI\fontawesome\scss\_core.scss" />
-    <Content Include="GUI\fontawesome\scss\_fixed-width.scss" />
-    <Content Include="GUI\fontawesome\scss\_functions.scss" />
-    <Content Include="GUI\fontawesome\scss\_icons.scss" />
-    <Content Include="GUI\fontawesome\scss\_list.scss" />
-    <Content Include="GUI\fontawesome\scss\_mixins.scss" />
-    <Content Include="GUI\fontawesome\scss\_rotated-flipped.scss" />
-    <Content Include="GUI\fontawesome\scss\_screen-reader.scss" />
-    <Content Include="GUI\fontawesome\scss\_shims.scss" />
-    <Content Include="GUI\fontawesome\scss\_sizing.scss" />
-    <Content Include="GUI\fontawesome\scss\_stacked.scss" />
-    <Content Include="GUI\fontawesome\scss\_variables.scss" />
-    <Content Include="GUI\fontawesome\webfonts\fa-brands-400.ttf" />
-    <Content Include="GUI\fontawesome\webfonts\fa-brands-400.woff2" />
-    <Content Include="GUI\fontawesome\webfonts\fa-regular-400.ttf" />
-    <Content Include="GUI\fontawesome\webfonts\fa-regular-400.woff2" />
-    <Content Include="GUI\fontawesome\webfonts\fa-solid-900.ttf" />
-    <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
-    <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
-    <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="GUI\Screens\Master Page\Created By.aspx" />
     <Content Include="GUI\Screens\Master Page\HomePage.aspx" />
     <Content Include="GUI\Screens\Master Page\Login.aspx" />
-    <Content Include="GUI\Screens\Master Page\Created By.aspx" />
+    <Content Include="obj\Debug\SJ Botique System.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SJ Botique System.dll" />
+    <Content Include="obj\Debug\SJ Botique System.pdb" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2297,18 +2314,52 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Admin.cs" />
+    <Compile Include="Entities\Attendance.cs" />
+    <Compile Include="Entities\Card.cs" />
+    <Compile Include="Entities\CardCategory.cs" />
+    <Compile Include="Entities\Cash.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\DiscountPolicy.cs" />
+    <Compile Include="Entities\FloorManager.cs" />
+    <Compile Include="Entities\InventoryManager.cs" />
+    <Compile Include="Entities\InventoryPolicy.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\LoyaltyPoints.cs" />
+    <Compile Include="Entities\OnlineStore.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderDetails.cs" />
+    <Compile Include="Entities\Outlet.cs" />
+    <Compile Include="Entities\OutletInventory.cs" />
+    <Compile Include="Entities\Payment.cs" />
     <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\Policy.cs" />
+    <Compile Include="Entities\POS.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\SalesAgent.cs" />
+    <Compile Include="Entities\SalesManager.cs" />
+    <Compile Include="Entities\ShoppingCart.cs" />
+    <Compile Include="Entities\Staff.cs" />
+    <Compile Include="Entities\Supplier.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\WorkShift.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Site1.Master.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
+    <Compile Include="GUI\HomeScreen\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Site1.Master.designer.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
+    <Compile Include="GUI\HomeScreen\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\Master Page\Created By.aspx.cs">
+      <DependentUpon>Created By.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\Master Page\Created By.aspx.designer.cs">
+      <DependentUpon>Created By.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\Master Page\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -2324,13 +2375,18 @@
     <Compile Include="GUI\Screens\Master Page\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Created By.aspx.cs">
-      <DependentUpon>Created By.aspx</DependentUpon>
+    <Compile Include="GUI\Screens\Master Page\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Created By.aspx.designer.cs">
-      <DependentUpon>Created By.aspx</DependentUpon>
+    <Compile Include="GUI\Screens\Master Page\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\OutletInventoryOperations.cs" />
+    <Compile Include="Interfaces\OutletOperations.cs" />
+    <Compile Include="Interfaces\RoleOperations.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -2356,7 +2412,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="GUI\Products\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

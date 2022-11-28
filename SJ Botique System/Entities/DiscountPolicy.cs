@@ -8,12 +8,12 @@ namespace SJ_Botique_System.Entities
     public class DiscountPolicy:Policy
     {
         //Methods
-      new  public void  AddPolicy()
+       override public void  AddPolicy()
         {
 
           
         }
-      new  public void ModifyPolicy()
+        override public void ModifyPolicy()
         {
 
 

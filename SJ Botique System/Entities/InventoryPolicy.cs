@@ -9,12 +9,12 @@ namespace SJ_Botique_System.Entities
     {
 
         //Methods
-       new public void AddPolicy()
+       override public void AddPolicy()
         {
 
             
         }
-       new public void ModifyPolicy()
+       override public void ModifyPolicy()
         {
 
 

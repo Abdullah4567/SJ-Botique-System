@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SJ_Botique_System.Entities
 {
-    public class Policy
+    public abstract class Policy
     {
         //Class Members
         protected int Id;
@@ -21,16 +21,8 @@ namespace SJ_Botique_System.Entities
         {
             return this.Description;
         }
-        public void AddPolicy()
-        {
-
-            return;
-        }
-        public void ModifyPolicy()
-        { 
-        
-        
-        }
+        abstract public void AddPolicy();
+       abstract public void ModifyPolicy();
         public Policy(int _id,string _description)
         {
             this.Id = _id;

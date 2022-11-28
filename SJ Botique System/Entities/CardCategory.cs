@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SJ_Botique_System.Entities
 {
-    public class CardCategory
+    public abstract class CardCategory
     {
         //Data Members
 
@@ -18,29 +18,25 @@ namespace SJ_Botique_System.Entities
         {
             return this.Id;
         }
-
-        public bool UpdateCategory()
+        public void UpdateCategory()
         {
-
-
-
-            return true;
         }
-        public CardCategory(int _id,string _description)
+        public CardCategory(int _id, string _description)
         {
             this.Id = _id;
             this.Description = _description;
 
         }
-
+        abstract public double GetDiscountPercent();
     }
     public class Platinum:CardCategory
     {
 
-        //DataMembers
+        //Data Members
        private double DiscountPercent;
-        //Members
-        public double GetDiscountPercent()
+       
+        //Methods
+       override public double GetDiscountPercent()
         {
 
             return this.DiscountPercent;
@@ -61,7 +57,7 @@ namespace SJ_Botique_System.Entities
         //DataMembers
         private double DiscountPercent;
         //Members
-        public double GetDiscountPercent()
+       override public double GetDiscountPercent()
         {
 
             return this.DiscountPercent;
@@ -82,8 +78,8 @@ namespace SJ_Botique_System.Entities
 
         //DataMembers
         private double DiscountPercent;
-        //Members
-        public double GetDiscountPercent()
+        //Methods 
+       override public double GetDiscountPercent()
         {
 
             return this.DiscountPercent;
@@ -96,7 +92,6 @@ namespace SJ_Botique_System.Entities
             this.DiscountPercent = _discountpercent;
 
         }
-
 
     }
 }
