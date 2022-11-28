@@ -1,0 +1,42 @@
+﻿.footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+        color: #ffd800;
+    }
+
+#footer1 {
+    background: #555555;
+}
+
+#footer2 {
+    background: #444444;
+}
+#bghome {
+    height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 1000px;
+    background-image: url('../imgs/center-img-home.png');
+}
+input[type = password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type = text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
