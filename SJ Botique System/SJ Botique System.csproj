@@ -115,6 +115,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Database Schema\BotiqueSystemSchema.sql" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -181,7 +182,7 @@
     <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
-    <Content Include="GUI\Screens\Master Page\Site1.Master" />
+    <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />
     <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />
     <Content Include=".vs\slnx.sqlite" />
@@ -2250,9 +2251,9 @@
     <Content Include="GUI\imgs\user.png" />
     <Content Include="GUI\mycss\customstylesheet.css" />
     <Content Include="GUI\myjs\mycustomjs.js" />
-    <Content Include="GUI\Screens\Master Page\Created By.aspx" />
-    <Content Include="GUI\Screens\Master Page\HomePage.aspx" />
-    <Content Include="GUI\Screens\Master Page\Login.aspx" />
+    <Content Include="GUI\Screens\MasterPage\Created By.aspx" />
+    <Content Include="GUI\Screens\MasterPage\HomePage.aspx" />
+    <Content Include="GUI\Screens\MasterPage\Login.aspx" />
     <Content Include="obj\Debug\SJ Botique System.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SJ Botique System.dll" />
     <Content Include="obj\Debug\SJ Botique System.pdb" />
@@ -2354,32 +2355,32 @@
     <Compile Include="GUI\HomeScreen\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Created By.aspx.cs">
+    <Compile Include="GUI\Screens\MasterPage\Created By.aspx.cs">
       <DependentUpon>Created By.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Created By.aspx.designer.cs">
+    <Compile Include="GUI\Screens\MasterPage\Created By.aspx.designer.cs">
       <DependentUpon>Created By.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\HomePage.aspx.cs">
+    <Compile Include="GUI\Screens\MasterPage\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\HomePage.aspx.designer.cs">
+    <Compile Include="GUI\Screens\MasterPage\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Login.aspx.cs">
+    <Compile Include="GUI\Screens\MasterPage\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Login.aspx.designer.cs">
+    <Compile Include="GUI\Screens\MasterPage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Site1.Master.cs">
+    <Compile Include="GUI\Screens\MasterPage\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Screens\Master Page\Site1.Master.designer.cs">
+    <Compile Include="GUI\Screens\MasterPage\Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\OutletInventoryOperations.cs" />
