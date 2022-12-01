@@ -5,17 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SJ_Botique_System.GUI.Screens.Master_Page
+namespace SJ_Botique_System.GUI
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Site1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-        protected void LinkButton13_Click(object sender, EventArgs e)
+        protected void LinkButton12_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("CreatedBy.aspx");
         }
+        
     }
 }

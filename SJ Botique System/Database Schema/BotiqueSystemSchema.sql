@@ -8,6 +8,8 @@ go
 use BoutiqueSystem
 go
 
+-- DBCC CHECKIDENT('Table Name', RESEED, starting value)  -- command to reseed Auto increment key in
+
 create table [User]
 (Id int Identity(1,1) primary key,
 [Name] nvarchar(30) NOT NULL,
@@ -142,8 +144,6 @@ create table [Policy]
 Policy_Type nvarchar(30) NOT NULL CHECK (Policy_Type='Inventory' OR Policy_Type='Discount'),
 [Description] nvarchar(100) NOT NULL
 )
-
-
 
 select * from [User]
 select * from [Role]
