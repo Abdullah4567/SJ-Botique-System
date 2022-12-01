@@ -2243,7 +2243,6 @@
     <Content Include="GUI\fontawesome\svgs\solid\yen-sign.svg" />
     <Content Include="GUI\fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="GUI\fontawesome\svgs\solid\z.svg" />
-    <Content Include="GUI\HomeScreen\Home.aspx" />
     <Content Include="GUI\imgs\bottom-img-home.png" />
     <Content Include="GUI\imgs\center-img-home.png" />
     <Content Include="GUI\imgs\created-by.png" />
@@ -2251,7 +2250,7 @@
     <Content Include="GUI\imgs\user.png" />
     <Content Include="GUI\mycss\customstylesheet.css" />
     <Content Include="GUI\myjs\mycustomjs.js" />
-    <Content Include="GUI\Screens\MasterPage\Created By.aspx" />
+    <Content Include="GUI\Screens\MasterPage\CreatedBy.aspx" />
     <Content Include="GUI\Screens\MasterPage\HomePage.aspx" />
     <Content Include="GUI\Screens\MasterPage\Login.aspx" />
     <Content Include="obj\Debug\SJ Botique System.csproj.FileListAbsolute.txt" />
@@ -2300,6 +2299,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\DbUtility.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -2348,19 +2348,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="GUI\HomeScreen\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="GUI\Screens\MasterPage\CreatedBy.aspx.cs">
+      <DependentUpon>CreatedBy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\HomeScreen\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Screens\MasterPage\Created By.aspx.cs">
-      <DependentUpon>Created By.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Screens\MasterPage\Created By.aspx.designer.cs">
-      <DependentUpon>Created By.aspx</DependentUpon>
+    <Compile Include="GUI\Screens\MasterPage\CreatedBy.aspx.designer.cs">
+      <DependentUpon>CreatedBy.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>

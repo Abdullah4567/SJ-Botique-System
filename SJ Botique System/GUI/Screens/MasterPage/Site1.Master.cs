@@ -15,7 +15,7 @@ namespace SJ_Botique_System.GUI
         }
         protected void LinkButton12_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Created By.aspx");
+            Response.Redirect("CreatedBy.aspx");
         }
         
     }
