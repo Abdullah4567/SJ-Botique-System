@@ -48,10 +48,11 @@ namespace SJ_Botique_System.Entities
         {
             this.Permissions.Remove(_permission);
         }
-        public Role(string _name, string _description)
+        public Role(string _name, string _description, int _id)
         {
             this.Name = _name;
             this.Description = _description;
+            this.Id = _id;
         }
     }
 }

@@ -144,7 +144,6 @@ create table [Policy]
 Policy_Type nvarchar(30) NOT NULL CHECK (Policy_Type='Inventory' OR Policy_Type='Discount'),
 [Description] nvarchar(100) NOT NULL
 )
-
 select * from [User]
 select * from [Role]
 select * from Permission
@@ -162,9 +161,7 @@ select * from Purchase_Detail
 select * from [Policy]
 select * from Card_Category
 
-
-
------- DATA INSERTION --------
+-- Sample Data Inserted
 
 INSERT INTO Card_Category values ('Silver', 2.5)
 INSERT INTO Card_Category values ('Gold', 5)
@@ -202,19 +199,16 @@ INSERT INTO Role_Permission values (5, 9)
 INSERT INTO Role_Permission values (6, 10)
 INSERT INTO Role_Permission values (6, 11)
 
-
-
-
 ------ LOGIN PROCEDURE ------
 
-create procedure log_in
+--drop procedure [log_in]
+create Procedure log_in
 @email nvarchar(50),
 @pass nvarchar(30),
 @userid int output,
-@roleid int output
-
+@roleName nvarchar(30) output
 As Begin
-	
+	Declare @roleId int =-1;
 	set @userid = -1
 	set @roleid = -1
 
@@ -222,18 +216,20 @@ As Begin
 	Begin
 		Select @userid = u.Id, @roleid = ur.Role_Id from [User] u 
 		JOIN User_Role ur on u.Id = ur.Id
-		where u.Email = @email and u.Password = @pass
+		where u.Email = @email and u.Password = @pass;
+		Select  @roleName=R.Name from [Role] R  where R.Id= @roleId;
 	End
 End
 
 ------ SIGNUP PROCEDURE ------
+
+--drop procedure sign_up
 
 create procedure sign_up
 @name nvarchar(30),
 @address nvarchar(100),
 @age int,
 @email nvarchar(50),
-@created datetime,
 @contact nvarchar(30),
 @pass nvarchar(20),
 @return int output
@@ -246,7 +242,7 @@ As Begin
 		set @return = 0
 	else begin
 		set @return = 1
-		INSERT INTO [User] values(@name, @address, @age, @email, @created, @contact, @pass)
+		INSERT INTO [User] values(@name, @address, @age, @email,GETDATE(), @contact, @pass)
 
 		declare @uid int
 		Select @uid = u.Id from [User] u where u.Email = @email
@@ -255,43 +251,3 @@ As Begin
 	end
 end
 
-
------- SAMPLE PROCEDURE EXECUTION ------
-
-DECLARE @return1 int
-
-EXEC	[dbo].[sign_up]
-		@name = N'Haris',
-		@address = N'house 2139',
-		@age = 28,
-		@email = N'haris28@gmail.com',
-		@created = N'2021',
-		@contact = N'032921021',
-		@pass = N'harisrauf28',
-		@return = @return1 OUTPUT
-
-SELECT	@return1 as N'@return'
-
-EXEC	[dbo].[sign_up]
-		@name = N'Adam',
-		@address = N'house#10',
-		@age = 45,
-		@email = N'adam78@yahoo.com',
-		@created = N'2022',
-		@contact = N'0325278829',
-		@pass = N'adam_78',
-		@return = @return1 OUTPUT
-
-SELECT	@return1 as N'@return'
-
-DECLARE	@userid1 int,
-		@roleid1 int
-
-EXEC	[dbo].[log_in]
-		@email = N'adam78@yahoo.com',
-		@pass = N'adam_78',
-		@userid = @userid1 OUTPUT,
-		@roleid = @roleid1 OUTPUT
-
-SELECT	@userid1 as N'@userid',
-		@roleid1 as N'@roleid'
