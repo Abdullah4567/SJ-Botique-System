@@ -1,144 +1,139 @@
-﻿//using sj_botique_system.helperclasses;
-//using system;
-//using system.collections.generic;
-//using system.configuration;
-//using system.data;
-//using system.data.sqlclient;
-//using system.linq;
-//using system.web;
+using SJ_Botique_System.HelperClasses;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
 
-//namespace sj_botique_system.app_start
-//{
-//    public class dbutility
-//    {
+namespace SJ_Botique_System.App_Start
+{
+    public class DbUtility
+    {
 
-//        constructor
-//        public dbutility()
-//        {
+        // constructor
+        public DbUtility()
+        {
 
-//        }
+        }
 
-//        public static datatable getdatatable(string sql)
-//        {
-//            try
-//            {
-//                var connectionstring = configurationmanager.connectionstrings["connectionstring"].connectionstring;
-//                datatable table = new datatable();
-//                using (sqlconnection dataconnection = new sqlconnection(connectionstring))
-//                {
-//                    using (sqlcommand datacommand = dataconnection.createcommand())
-//                    {
-//                        datacommand.commandtext = sql;
-//                        dataconnection.open();
-//                        sqldataadapter adapter = new sqldataadapter();
-//                        adapter.selectcommand = datacommand;
-//                        adapter.fill(table);
-//                    }
-//                }
-//                return table;
-//            }
-//            catch (exception ex)
-//            {
-//                throw ex;
-//            }
+        public static DataTable GetDataTable(string SQL)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                DataTable table = new DataTable();
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = dataConnection.CreateCommand())
+                    {
+                        dataCommand.CommandText = SQL;
+                        dataConnection.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        adapter.SelectCommand = dataCommand;
+                        adapter.Fill(table);
+                    }
+                }
+                return table;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-//        }
+        }
+        public static int InsertRecordInRoleTable(string SQL, string roleName, string description)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = dataConnection.CreateCommand())
+                    {
+                        dataCommand.CommandText = SQL;
+                        dataConnection.Open();
+                        dataCommand.Parameters.Add(new SqlParameter("@RoleName", roleName));
+                        dataCommand.Parameters.Add(new SqlParameter("@Desc", description));
+                        var a = dataCommand.ExecuteNonQuery();
 
+                        return a;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-//        public static int insertrecordinroletable(string sql, string rolename, string description)
-//        {
-//            try
-//            {
-//                var connectionstring = configurationmanager.connectionstrings["connectionstring"].connectionstring;
-//                using (sqlconnection dataconnection = new sqlconnection(connectionstring))
-//                {
-//                    using (sqlcommand datacommand = dataconnection.createcommand())
-//                    {
-//                        datacommand.commandtext = sql;
-//                        dataconnection.open();
-//                        datacommand.parameters.add(new sqlparameter("@rolename", rolename));
-//                        datacommand.parameters.add(new sqlparameter("@desc", description));
-//                        var a = datacommand.executenonquery();
+        }
+        public static int InsertForSignUp(string NameOfProcedure, string Name, string Email, string Password, int Age, string Contact, string Address)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = new SqlCommand(NameOfProcedure, dataConnection))
+                    {
+                        //dataCommand.CommandText = SQL;
+                        dataCommand.CommandType = CommandType.StoredProcedure;
+                        dataConnection.Open();
+                        dataCommand.Parameters.Add(new SqlParameter("@Name", Name));
+                        dataCommand.Parameters.Add(new SqlParameter("@Email", Email));
+                        dataCommand.Parameters.Add(new SqlParameter("@Pass", Password));
+                        dataCommand.Parameters.Add(new SqlParameter("@Age", Age));
+                        dataCommand.Parameters.Add(new SqlParameter("@Contact", Contact));
+                        dataCommand.Parameters.Add(new SqlParameter("@Address", Address));
+                        dataCommand.Parameters.Add(new SqlParameter("@userId", SqlDbType.Int));
+                        dataCommand.Parameters["@userId"].Direction = ParameterDirection.Output;
+                        dataCommand.ExecuteNonQuery();
+                        int res = Convert.ToInt32(dataCommand.Parameters["@userId"].Value);
+                        // cmd.Parameters["@Name"].Direction = ParameterDirection.Output;
 
-//                        return a;
-//                    }
-//                }
-//            }
-//            catch (exception ex)
-//            {
-//                throw ex;
-//            }
+                        return res;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-//        }
+        }
+        public static LoginDetails InsertForLogin(string NameOfProcedure, string Email, string Password)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = new SqlCommand(NameOfProcedure, dataConnection))
+                    {
+                        //dataCommand.CommandText = SQL;
+                        dataCommand.CommandType = CommandType.StoredProcedure;
+                        dataConnection.Open();
+                       
+                        dataCommand.Parameters.Add(new SqlParameter("@Email", Email));
+                        dataCommand.Parameters.Add(new SqlParameter("@Pass", Password));
+                        dataCommand.Parameters.Add(new SqlParameter("@userid", SqlDbType.Int));
+                        dataCommand.Parameters.Add(new SqlParameter("@roleName", SqlDbType.NVarChar,30));
+                        dataCommand.Parameters["@userid"].Direction = ParameterDirection.Output;
+                        dataCommand.Parameters["@roleName"].Direction = ParameterDirection.Output;
+                        dataCommand.ExecuteNonQuery();
+                        int userId = Convert.ToInt32(dataCommand.Parameters["@userid"].Value);
+                        string RoleName = (string)dataCommand.Parameters["@roleName"].Value;
 
-//        public static int insertforsignup(string nameofprocedure, string name, string email, string password, int age, string contact, string address)
-//        {
-//            try
-//            {
-//                var connectionstring = configurationmanager.connectionstrings["connectionstring"].connectionstring;
-//                using (sqlconnection dataconnection = new sqlconnection(connectionstring))
-//                {
-//                    using (sqlcommand datacommand = new sqlcommand(nameofprocedure, dataconnection))
-//                    {
-//                        datacommand.commandtext = sql;
-//                        datacommand.commandtype = commandtype.storedprocedure;
-//                        dataconnection.open();
-//                        datacommand.parameters.add(new sqlparameter("@name", name));
-//                        datacommand.parameters.add(new sqlparameter("@email", email));
-//                        datacommand.parameters.add(new sqlparameter("@pass", password));
-//                        datacommand.parameters.add(new sqlparameter("@age", age));
-//                        datacommand.parameters.add(new sqlparameter("@contact", contact));
-//                        datacommand.parameters.add(new sqlparameter("@address", address));
-//                        datacommand.parameters.add(new sqlparameter("@userid", sqldbtype.int));
-//                        datacommand.parameters["@userid"].direction = parameterdirection.output;
-//                        datacommand.executenonquery();
-//                        int res = convert.toint32(datacommand.parameters["@userid"].value);
-//                        cmd.parameters["@name"].direction = parameterdirection.output;
+                        return new LoginDetails(userId, RoleName);  // using DTO to transfer Data to code Behind File
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-//                        return res;
-//                    }
-//                }
-//            }
-//            catch (exception ex)
-//            {
-//                throw ex;
-//            }
-
-//        }
-
-//        public static logindetails insertforlogin(string nameofprocedure, string email, string password)
-//        {
-//            try
-//            {
-//                var connectionstring = configurationmanager.connectionstrings["connectionstring"].connectionstring;
-//                using (sqlconnection dataconnection = new sqlconnection(connectionstring))
-//                {
-//                    using (sqlcommand datacommand = new sqlcommand(nameofprocedure, dataconnection))
-//                    {
-//                        datacommand.commandtext = sql;
-//                        datacommand.commandtype = commandtype.storedprocedure;
-//                        dataconnection.open();
-
-//                        datacommand.parameters.add(new sqlparameter("@email", email));
-//                        datacommand.parameters.add(new sqlparameter("@pass", password));
-//                        datacommand.parameters.add(new sqlparameter("@userid", sqldbtype.int));
-//                        datacommand.parameters.add(new sqlparameter("@rolename", sqldbtype.nvarchar, 30));
-//                        datacommand.parameters["@userid"].direction = parameterdirection.output;
-//                        datacommand.parameters["@rolename"].direction = parameterdirection.output;
-//                        datacommand.executenonquery();
-//                        int userid = convert.toint32(datacommand.parameters["@userid"].value);
-//                        string rolename = (string)datacommand.parameters["@rolename"].value;
-//                        cmd.parameters["@name"].direction = parameterdirection.output;
-
-//                        return new logindetails(userid, rolename);
-//                    }
-//                }
-//            }
-//            catch (exception ex)
-//            {
-//                throw ex;
-//            }
-
-//        }
-//    }
-//}
+        }
+    }
+}

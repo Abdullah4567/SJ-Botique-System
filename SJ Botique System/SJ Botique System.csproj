@@ -2401,6 +2401,7 @@
     <Compile Include="GUI\Screens\MasterPage\FloorManager.aspx.designer.cs">
       <DependentUpon>FloorManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HelperClasses\LoginDetails.cs" />
     <Compile Include="Interfaces\OutletInventoryOperations.cs" />
     <Compile Include="Interfaces\OutletOperations.cs" />
     <Compile Include="Interfaces\RoleOperations.cs" />

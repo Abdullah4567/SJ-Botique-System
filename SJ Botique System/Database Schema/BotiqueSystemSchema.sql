@@ -8,6 +8,7 @@ go
 use BoutiqueSystem
 go
 
+
 -- DBCC CHECKIDENT('Table Name', RESEED, starting value)  -- command to reseed Auto increment key in
 
 create table [User]
@@ -144,7 +145,7 @@ create table [Policy]
 Policy_Type nvarchar(30) NOT NULL CHECK (Policy_Type='Inventory' OR Policy_Type='Discount'),
 [Description] nvarchar(100) NOT NULL
 )
-select * from [User]
+/*select * from [User]
 select * from [Role]
 select * from Permission
 select * from Role_Permission
@@ -159,10 +160,49 @@ select * from Outlet_Inventory
 select * from PurchaseLines
 select * from Purchase_Detail
 select * from [Policy]
-select * from Card_Category
+select * from Card_Category */
+
+
+--Delete Data from All Tables
+
+/*delete  from [User]
+delete  from [Role]
+delete  from Permission
+delete  from Role_Permission
+delete  from WorkShift
+delete  from User_Role
+delete  from Attendance
+delete  from Product
+delete  from [Order]
+delete  from Order_Detail
+delete  from Outlet
+delete  from Outlet_Inventory
+delete  from PurchaseLines
+delete  from Purchase_Detail
+delete  from [Policy]
+delete  from Card_Category*/
+
+-- Reseeding All Auto increment keys
+
+/*DBCC CHECKIDENT('User', RESEED, 0)
+DBCC CHECKIDENT('Role', RESEED, 0)
+DBCC CHECKIDENT('Permission', RESEED, 0)
+DBCC CHECKIDENT('Role_Permission', RESEED, 0)
+DBCC CHECKIDENT('WorkShift', RESEED, 0)
+DBCC CHECKIDENT('User_Role', RESEED, 0)
+DBCC CHECKIDENT('Attendance', RESEED, 0)
+DBCC CHECKIDENT('Product', RESEED, 0)
+DBCC CHECKIDENT('Order', RESEED, 0)
+DBCC CHECKIDENT('Order_Detail', RESEED, 0)
+DBCC CHECKIDENT('Outlet', RESEED, 0)
+DBCC CHECKIDENT('Outlet_Inventory', RESEED, 0)
+DBCC CHECKIDENT('PurchaseLines', RESEED, 0)
+DBCC CHECKIDENT('Purchase_Detail', RESEED, 0)
+DBCC CHECKIDENT('Policy', RESEED, 0)
+DBCC CHECKIDENT('Outlet_Inventory', RESEED, 0)
+DBCC CHECKIDENT('Card_Category', RESEED, 0)*/
 
 -- Sample Data Inserted
-
 INSERT INTO Card_Category values ('Silver', 2.5)
 INSERT INTO Card_Category values ('Gold', 5)
 INSERT INTO Card_Category values ('Platinum', 10)
@@ -172,7 +212,7 @@ INSERT INTO [Role] values ('Sales Agent', 'A company employee working at an outl
 INSERT INTO [Role] values ('Floor Manager', 'A company employee in charge of an outlet floor')
 INSERT INTO [Role] values ('Inventory Manager', 'A company employee managing inventory and policies')
 INSERT INTO [Role] values ('Store Manager', 'A company employee monitoring duties of an outlet')
-INSERT INTO [Role] values ('Store Admin', 'A company head in charge of all outlets, employees and customers')
+INSERT INTO [Role] values ('Admin', 'A company head in charge of all outlets, employees and customers')
 
 INSERT INTO Permission values ('Order', 'Place/cancel order and buy/return products')
 INSERT INTO Permission values ('Mark Attendance', 'Mark attendance at a particular date')
@@ -185,6 +225,8 @@ INSERT INTO Permission values ('Discount Policy', 'Define or change discount pol
 INSERT INTO Permission values ('View Reports', 'Run monthly and annual reports of products')
 INSERT INTO Permission values ('Manage User', 'Add/remove user and assign roles')
 INSERT INTO Permission values ('Manage Outlets', 'Block or delete outlets')
+INSERT INTO Permission values ('Track Performance', 'Track Performance Reports of Staff Members')
+--select * from Permission
 
 INSERT INTO Role_Permission values (1, 1)
 INSERT INTO Role_Permission values (2, 2)
@@ -198,9 +240,27 @@ INSERT INTO Role_Permission values (5, 8)
 INSERT INTO Role_Permission values (5, 9)
 INSERT INTO Role_Permission values (6, 10)
 INSERT INTO Role_Permission values (6, 11)
+--select * from Role_Permission
+
+Insert into Product ([Name],[Price],[Quantity]) values ('Shirt',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Bags',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Covers',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Jackets',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Hoodies',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Pents',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Shoes',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Suits',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('Sandals',250,10)
+Insert into Product ([Name],[Price],[Quantity]) values ('CottonShirt',250,10)
+-- select * from Product
+--DBCC CHECKIDENT('Product', RESEED, 0)
+
+select * from [User]
+select * from [User_Role]
+insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111','pass123')
+insert into User_Role values (1,6,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
-
 --drop procedure [log_in]
 create Procedure log_in
 @email nvarchar(50),
