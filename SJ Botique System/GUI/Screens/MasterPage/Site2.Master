@@ -29,16 +29,13 @@
     <form id="form1" runat="server">
             <div>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
-                    <!--<img src="../../imgs/SJ%20Boutique.png" />-->
-                 S & J Boutique
-                </a>
+                
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <%--<div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="homepage.aspx">Home</a>
@@ -66,7 +63,7 @@
 
                         </li>
                     </ul>
-                </div>
+                </div>--%>
 
 
             </nav>
@@ -147,15 +144,28 @@ body {
 </style>
 
 <div class="container-fluid fixed-top bg-dark py-3">
+       
     <div class="row collapse show no-gutters d-flex h-100 position-relative">
+       
         <div class="col-3 px-0 w-sidebar navbar-collapse collapse d-none d-md-flex">
             <!-- spacer col -->
+             
         </div>
         <div class="col px-2 px-md-0">
             <!-- toggler -->
             <a data-toggle="collapse" href="#" data-target=".collapse" role="button" class="p-1">
                 <i class="fa fa-bars fa-lg"></i>
             </a>
+         <a class="navbar-brand text-secondary" href="#">
+                    <!--<img src="../../imgs/SJ%20Boutique.png" />-->
+                 S & J Boutique
+          </a>
+            <a class="navbar-brand text-secondary" href="homepage.aspx">Home</a>
+            <a class="navbar-brand text-secondary" href="#">About Us</a>
+        </div>
+        <div class="row">
+             
+             <a class="navbar-brand text-secondary" href="#">Logout</a>
         </div>
     </div>
 </div>
