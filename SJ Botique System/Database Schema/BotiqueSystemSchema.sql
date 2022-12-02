@@ -252,6 +252,14 @@ Insert into Product ([Name],[Price],[Quantity]) values ('Shoes',250,10)
 Insert into Product ([Name],[Price],[Quantity]) values ('Suits',250,10)
 Insert into Product ([Name],[Price],[Quantity]) values ('Sandals',250,10)
 Insert into Product ([Name],[Price],[Quantity]) values ('CottonShirt',250,10)
+
+delete from WorkShift
+insert into WorkShift values ('Evening', DATEADD(hour, 0, GetDate()),DATEADD(hour, 2, GetDate()))
+insert into WorkShift values ('Evening', DATEADD(hour, 3, GetDate()),DATEADD(hour, 5, GetDate()))
+insert into WorkShift values ('Evening', DATEADD(hour, 5, GetDate()),DATEADD(hour, 7, GetDate()))
+insert into WorkShift values ('Evening', DATEADD(hour, 7, GetDate()),DATEADD(hour, 9, GetDate()))
+select * from WorkShift
+
 -- select * from Product
 --DBCC CHECKIDENT('Product', RESEED, 0)
 
