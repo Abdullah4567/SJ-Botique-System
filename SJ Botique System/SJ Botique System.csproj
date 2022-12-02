@@ -187,10 +187,8 @@
     <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />
     <Content Include=".vs\slnx.sqlite" />
     <Content Include=".vs\VSWorkspaceState.json" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\SJ Botique System.csproj.CopyComplete" />
-    <Content Include="obj\Debug\SJ Botique System.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Debug\SJ Botique System.csprojAssemblyReference.cache" />
+    <Content Include="GUI\Screens\MasterPage\Admin.aspx" />
+    <Content Include="GUI\Screens\MasterPage\Site2.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="GUI\bootstrap\css\bootstrap.min.css" />
     <Content Include="GUI\bootstrap\js\bootstrap.min.js" />
@@ -2253,9 +2251,8 @@
     <Content Include="GUI\Screens\MasterPage\CreatedBy.aspx" />
     <Content Include="GUI\Screens\MasterPage\HomePage.aspx" />
     <Content Include="GUI\Screens\MasterPage\Login.aspx" />
-    <Content Include="obj\Debug\SJ Botique System.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\SJ Botique System.dll" />
-    <Content Include="obj\Debug\SJ Botique System.pdb" />
+    <Content Include="GUI\Screens\MasterPage\InventoryManager.aspx" />
+    <Content Include="GUI\Screens\MasterPage\FloorManager.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2376,12 +2373,38 @@
     <Compile Include="GUI\Screens\MasterPage\Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\MasterPage\Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\InventoryManager.aspx.cs">
+      <DependentUpon>InventoryManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\InventoryManager.aspx.designer.cs">
+      <DependentUpon>InventoryManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\FloorManager.aspx.cs">
+      <DependentUpon>FloorManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\FloorManager.aspx.designer.cs">
+      <DependentUpon>FloorManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HelperClasses\LoginDetails.cs" />
     <Compile Include="Interfaces\OutletInventoryOperations.cs" />
     <Compile Include="Interfaces\OutletOperations.cs" />
     <Compile Include="Interfaces\RoleOperations.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -2408,7 +2431,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="GUI\Products\" />
-    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
