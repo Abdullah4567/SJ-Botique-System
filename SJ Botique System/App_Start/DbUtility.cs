@@ -1,12 +1,8 @@
-using SJ_Botique_System.HelperClasses;
+using SJ_Botique_System.DTO;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-
 namespace SJ_Botique_System.App_Start
 {
     public class DbUtility
