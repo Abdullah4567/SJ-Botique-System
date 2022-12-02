@@ -43,8 +43,6 @@ namespace SJ_Botique_System.App_Start
             }
 
         }
-
-
         public static int InsertRecordInRoleTable(string SQL, string roleName, string description)
         {
             try
@@ -70,7 +68,6 @@ namespace SJ_Botique_System.App_Start
             }
 
         }
-
         public static int InsertForSignUp(string NameOfProcedure, string Name, string Email, string Password, int Age, string Contact, string Address)
         {
             try
@@ -105,7 +102,6 @@ namespace SJ_Botique_System.App_Start
             }
 
         }
-
         public static LoginDetails InsertForLogin(string NameOfProcedure, string Email, string Password)
         {
             try
@@ -128,9 +124,8 @@ namespace SJ_Botique_System.App_Start
                         dataCommand.ExecuteNonQuery();
                         int userId = Convert.ToInt32(dataCommand.Parameters["@userid"].Value);
                         string RoleName = (string)dataCommand.Parameters["@roleName"].Value;
-                        // cmd.Parameters["@Name"].Direction = ParameterDirection.Output;
 
-                        return new LoginDetails(userId, RoleName);
+                        return new LoginDetails(userId, RoleName);  // using DTO to transfer Data to code Behind File
                     }
                 }
             }
