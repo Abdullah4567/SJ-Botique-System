@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SJ_Botique_System.HelperClasses;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -88,10 +89,10 @@ namespace SJ_Botique_System.App_Start
                         dataCommand.Parameters.Add(new SqlParameter("@Age", Age));
                         dataCommand.Parameters.Add(new SqlParameter("@Contact", Contact));
                         dataCommand.Parameters.Add(new SqlParameter("@Address", Address));
-                        dataCommand.Parameters.Add(new SqlParameter("@return", SqlDbType.Int));
-                        dataCommand.Parameters["@return"].Direction = ParameterDirection.Output;
+                        dataCommand.Parameters.Add(new SqlParameter("@userId", SqlDbType.Int));
+                        dataCommand.Parameters["@userId"].Direction = ParameterDirection.Output;
                         dataCommand.ExecuteNonQuery();
-                        int res = Convert.ToInt32(dataCommand.Parameters["@return"].Value);
+                        int res = Convert.ToInt32(dataCommand.Parameters["@userId"].Value);
                         // cmd.Parameters["@Name"].Direction = ParameterDirection.Output;
 
                         return res;
@@ -105,7 +106,7 @@ namespace SJ_Botique_System.App_Start
 
         }
 
-        public static string InsertForLogin(string NameOfProcedure, string Email, string Password)
+        public static LoginDetails InsertForLogin(string NameOfProcedure, string Email, string Password)
         {
             try
             {
@@ -129,7 +130,7 @@ namespace SJ_Botique_System.App_Start
                         string RoleName = (string)dataCommand.Parameters["@roleName"].Value;
                         // cmd.Parameters["@Name"].Direction = ParameterDirection.Output;
 
-                        return RoleName;
+                        return new LoginDetails(userId, RoleName);
                     }
                 }
             }

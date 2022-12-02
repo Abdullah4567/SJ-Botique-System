@@ -1,5 +1,6 @@
 ﻿using SJ_Botique_System.App_Start;
 using SJ_Botique_System.Entities;
+using SJ_Botique_System.HelperClasses;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -34,13 +35,15 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
             // Code working Fine for SignUp Functionality
             //query.Clear();
             //query.Append($"[dbo].[sign_up]");
-            //var aaa = DbUtility.InsertForSignUp(query.ToString(), "Ahmad", "ahmad@gmail.com", "pass123", 22, "03212847563", "Block 22");
+           // var userId = DbUtility.InsertForSignUp(query.ToString(), "Ali", "Ali@gmail.com", "pass123", 22, "03212847563", "Block 22");
 
 
             // Code working Fine for Login Functionality
             //query.Clear();
             //query.Append($"[dbo].[log_in]");
-            //var res = DbUtility.InsertForLogin(query.ToString(),"ahmad@gmail.com", "pass123");
+           //LoginDetails CurrentUser = DbUtility.InsertForLogin(query.ToString(),"ahmad@gmail.com", "pass123");
+           // CurrentUser.RollName;
+            //CurrentUser.UserId;
 
 
 

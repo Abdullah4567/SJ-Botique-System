@@ -225,29 +225,30 @@ End
 
 --drop procedure sign_up
 
-create procedure sign_up
+Alter procedure sign_up
 @name nvarchar(30),
 @address nvarchar(100),
 @age int,
 @email nvarchar(50),
 @contact nvarchar(30),
 @pass nvarchar(20),
-@return int output
+@userId int output
 
 As Begin
 
 	if EXISTS(Select * from [User] u where u.Email = @email or u.Name = @name)
-		set @return = -1
+		set @userId = -1
 	else if @age <= 0 or @age >= 100
-		set @return = 0
+		set @userId = 0
 	else begin
-		set @return = 1
+		
 		INSERT INTO [User] values(@name, @address, @age, @email,GETDATE(), @contact, @pass)
 
 		declare @uid int
 		Select @uid = u.Id from [User] u where u.Email = @email
 
 		INSERT INTO User_Role values(@uid, 1, NULL, 0, 1)
+		set @userId = @uid;
 	end
 end
 
