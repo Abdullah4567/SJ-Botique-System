@@ -1,11 +1,17 @@
-﻿.footerlinks {
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    padding-top: 56px;
+}
+
+.footerlinks {
     color: #ffffff;
     text-decoration: none !important;
 }
 
-    .footerlinks:hover {
-        color: #ffd800;
-    }
+.footerlinks:hover {
+    color: #ffd800;
+}
 
 #footer1 {
     background: #555555;
@@ -14,6 +20,7 @@
 #footer2 {
     background: #444444;
 }
+
 #bghome {
     height: 800px;
     background-attachment: fixed;
@@ -21,6 +28,7 @@
     background-size: 1000px;
     background-image: url('../imgs/center-img-home.png');
 }
+
 input[type = password], select {
     width: 100%;
     padding: 12px 20px;
@@ -40,11 +48,7 @@ input[type = text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-body {
-    height: 100vh;
-    overflow-x: hidden;
-    padding-top: 56px;
-}
+
 
 .vh-100 {
     min-height: 100vh;

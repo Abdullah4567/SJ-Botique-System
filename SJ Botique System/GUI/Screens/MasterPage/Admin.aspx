@@ -5,4 +5,5 @@
   <hr />
     <center> <h1>   Admin  </h1></center>
         <hr />
+<%--<asp:Table ID="Table1" runat="server"></asp:Table>--%>
 </asp:Content>
