@@ -1,7 +1,6 @@
 body {
     height: 100vh;
     overflow-x: hidden;
-    padding-top: 56px;
 }
 
 .footerlinks {
@@ -47,25 +46,4 @@ input[type = text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-
-
-.vh-100 {
-    min-height: 100vh;
-}
-
-.sidebar.collapse.show,
-.sidebar.collapse.show + .col {
-    transition: 100s ease;
-    transform: translate(0,0,0);
-    left: 0;
-}
-
-.sidebar.collapse,
-.sidebar.collapsing,
-.sidebar.collapsing + .col {
-    transition: 100s ease;
-    transform: translate(-25%,0,0);
-    z-index: 1050;
-    left: -25%;
 }

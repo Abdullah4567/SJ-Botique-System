@@ -182,8 +182,7 @@
     <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
-    <Content Include="GUI\mycss\customcss.css" />
-    <Content Include="GUI\mycss\myCustomCss.css" />
+    <Content Include="GUI\mycss\css.css" />
     <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />
     <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />

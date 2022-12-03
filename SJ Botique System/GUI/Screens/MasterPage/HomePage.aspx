@@ -29,7 +29,7 @@
                      
         </div>
                         <center>
-                           <span class="badge badge-pill badge-info">Credentials</span>
+                           <%--<span class="badge badge-pill badge-info">Credentials</span>--%>
                        <div class="container justify-content-md-end">
                            <div class="row justify-content-md-center w-50">
                             <div class="col-6">
@@ -60,7 +60,7 @@
                            <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="New Password" TextMode="Password"></asp:TextBox>
                             </div>  
                                 --%>
-                                <b>Password</b>   <br /> <input type="password" id="inputpass"><br />
+                                <b>Password</b>   <br /> <asp:TextBox class="form-control" ID="TextBox3" runat="server" placeholder=""></asp:TextBox><br />
                                 <div class="row justify-content-md-start">
                                  &nbsp &nbsp &nbsp<input id="Checkbox1" type="checkbox" onclick="toggle()"/>&nbsp<i> Show Password</i>
                                     </div>
