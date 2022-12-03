@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SJ_Botique_System.HelperClasses
+namespace SJ_Botique_System.DTO
 {
     public class LoginDetails
     {

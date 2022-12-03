@@ -182,6 +182,8 @@
     <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="GUI\mycss\customcss.css" />
+    <Content Include="GUI\mycss\myCustomCss.css" />
     <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />
     <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />
@@ -2246,7 +2248,6 @@
     <Content Include="GUI\imgs\created-by.png" />
     <Content Include="GUI\imgs\upper-img-home.png" />
     <Content Include="GUI\imgs\user.png" />
-    <Content Include="GUI\mycss\customstylesheet.css" />
     <Content Include="GUI\myjs\mycustomjs.js" />
     <Content Include="GUI\Screens\MasterPage\CreatedBy.aspx" />
     <Content Include="GUI\Screens\MasterPage\HomePage.aspx" />
@@ -2312,6 +2313,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DTO\LoginDetails.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Attendance.cs" />
     <Compile Include="Entities\Card.cs" />
@@ -2401,7 +2403,6 @@
     <Compile Include="GUI\Screens\MasterPage\FloorManager.aspx.designer.cs">
       <DependentUpon>FloorManager.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HelperClasses\LoginDetails.cs" />
     <Compile Include="Interfaces\OutletInventoryOperations.cs" />
     <Compile Include="Interfaces\OutletOperations.cs" />
     <Compile Include="Interfaces\RoleOperations.cs" />
