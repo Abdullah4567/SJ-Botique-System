@@ -1,4 +1,5 @@
 ﻿//using SJ_Botique_System.App_Start;
+using SJ_Botique_System.App_Start;
 using SJ_Botique_System.Entities;
 //using SJ_Botique_System.HelperClasses;
 using System;
@@ -16,7 +17,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-  //          StringBuilder query = new StringBuilder();
+            //          StringBuilder query = new StringBuilder();
 
             //query.Append($"SELECT Id, Name, Description FROM ROLE");
 
@@ -30,7 +31,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
 
             //query.Clear();
             //query.Append($"select  P.Name, P.Description from Role_Permission PR join Permission P on PR.Permission_id=P.Id where PR.Role_id= {RoleId}");
-            // result = DbUtility.GetDataTable(query.ToString());
+            //result = DbUtility.GetDataTable(query.ToString());
 
 
             // =========================================================================

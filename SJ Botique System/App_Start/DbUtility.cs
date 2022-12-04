@@ -1,4 +1,5 @@
 using SJ_Botique_System.DTO;
+using SJ_Botique_System.Entities;
 using System;
 using System.Configuration;
 using System.Data;
@@ -13,7 +14,6 @@ namespace SJ_Botique_System.App_Start
         {
 
         }
-
         public static DataTable GetDataTable(string SQL)
         {
             try
@@ -53,7 +53,82 @@ namespace SJ_Botique_System.App_Start
                         dataCommand.Parameters.Add(new SqlParameter("@RoleName", roleName));
                         dataCommand.Parameters.Add(new SqlParameter("@Desc", description));
                         var a = dataCommand.ExecuteNonQuery();
+                        return a;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+        }
+        public static int AddWorkshift(string SQL,WorkShift Obj)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = dataConnection.CreateCommand())
+                    {
+                        dataCommand.CommandText = SQL;
+                        dataConnection.Open();
+                        DateTime Time_in = DateTime.Parse(Obj.GetTimeIn());
+                        DateTime Time_out = DateTime.Parse(Obj.GetTimeOut());
+                        dataCommand.Parameters.Add(new SqlParameter("@Name", Obj.GetName()));
+                        dataCommand.Parameters.Add(new SqlParameter("@Time_in", Time_in));
+                        dataCommand.Parameters.Add(new SqlParameter("@Time_out", Time_out));
+                        var a = dataCommand.ExecuteNonQuery();
+                        return a;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static int UpdateWorkshift(string SQL, string Name, DateTime time_in, DateTime time_out, int Id)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = dataConnection.CreateCommand())
+                    {
+                        dataCommand.CommandText = SQL;
+                        dataConnection.Open();
+                        dataCommand.Parameters.Add(new SqlParameter("@Name", Name));
+                        dataCommand.Parameters.Add(new SqlParameter("@Time_in", time_in));
+                        dataCommand.Parameters.Add(new SqlParameter("@Time_out", time_out));
+                        dataCommand.Parameters.Add(new SqlParameter("@Id", Id));
+                        var a = dataCommand.ExecuteNonQuery();
+                        return a;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public static int DeleteWorkshift(string SQL,int Id)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString;
+                using (SqlConnection dataConnection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand dataCommand = dataConnection.CreateCommand())
+                    {
+                        dataCommand.CommandText = SQL;
+                        dataConnection.Open();
+                        dataCommand.Parameters.Add(new SqlParameter("@Id", Id));
+                        var a = dataCommand.ExecuteNonQuery();
                         return a;
                     }
                 }

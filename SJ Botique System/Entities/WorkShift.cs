@@ -42,9 +42,17 @@ namespace SJ_Botique_System.Entities
         {
             this.TimeOut = _time_out;
         }
-        public WorkShift(int _id,string _name, string _time_in, string _time_out)
+        public string GetTimeIn()
         {
-            this.Id = _id;
+            return this.TimeIn;
+        }
+        public string GetTimeOut()
+        {
+            return this.TimeOut;
+        }
+        public WorkShift(string _name, string _time_in, string _time_out)
+        {
+          
             this.Name = _name;
             this.TimeIn = _time_in;
             this.TimeOut = _time_out;

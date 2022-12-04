@@ -14,7 +14,7 @@
     <%--jquery--%>
     <script src="../../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
      <%--my custom stylesheet--%>
-    <link href="../../mycss/css.css" rel="stylesheet" />
+    <%--<link href="../../mycss/css.css" rel="stylesheet" />--%>
     <%--popper js--%>
     <script src="../../bootstrap/js/popper.min.js"></script>
     <%--bootstrap js--%>
@@ -28,9 +28,10 @@
 <body>
     <style>
 body {
-   height: 100vh;
-   overflow-x: hidden;
+   /*height: 100vh;*/
+   /*overflow-x: hidden;*/
    padding-top: 55px;
+    /*overflow-y: scroll;*/
 }
 
 /* set the sidebar width */
@@ -135,7 +136,7 @@ body {
            <div class="position-fixed bg-dark text-white h-100 w-sidebar">
                 <ul class="nav flex-column mt-5 m-1">
                     <li class="mb-auto p-2">
-                         <button type="button" class="btn btn-outline-info btn-md btn-block">User Operations</button>
+                         <button type="button" class="btn btn-outline-info btn-md btn-block" runat="server">User Operations</button>
                     </li>
                     <li   class="mb-auto p-2">
                         <button type="button" class="btn btn-outline-info btn-md btn-block">Role Assignments</button>
@@ -144,7 +145,7 @@ body {
                        <button type="button" class="btn btn-outline-info btn-md btn-block">Outlet Operations</button>
                     </li>
                     <li class="mb-auto p-2">
-                       <button type="button" class="btn btn-outline-info btn-md btn-block">WorkShifts</button>
+                       <button type="button" class="btn btn-outline-info btn-md btn-block" onserverclick="workShift" runat="server">WorkShifts</button>
                     </li>
                     <li class="mb-auto p-2">
                        <button type="button" class="btn btn-outline-info btn-md btn-block">Inventory Policy</button>
@@ -176,7 +177,7 @@ body {
         <!-- Main Content Placeholder -->
 
             <!-- Footer -->
-    <footer>
+   <%-- <footer>
             <div id="footer1" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -202,7 +203,7 @@ body {
             </div>
 
         </footer>
-        <!-- ./Footer -->
+        <!-- ./Footer -->--%>
     </form>
 </body>
 </html>

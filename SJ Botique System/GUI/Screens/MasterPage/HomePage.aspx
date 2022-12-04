@@ -1,30 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.Master_Page.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
+  <style>
         input[type = password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type = text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-    </style> 
-    <section>
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        input[type = text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+ </style>
+     <section>
          <img src="../../imgs/upper-img-home.png" class="embed-responsive"/>
      </section>
     <div id="bghome">
@@ -86,7 +85,7 @@ input[type = text], select {
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox4" runat="server" placeholder="+92xxxxxxxxxx"></asp:TextBox>
                         </div>
-                                </div>
+                         </div>
                             <div class="col-3 mx-auto">
                         <b>Create Password</b><br /><input type="password" id="inputpass" width="200px" placeholder="New Password">  
                              <div class="row justify-content-md-start">
