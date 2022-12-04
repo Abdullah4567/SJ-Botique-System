@@ -79,11 +79,11 @@
  
                                 <img src="../../imgs/bottom-img-home.png" class="embed-responsive"/>
 
-<%--<asp:GridView ID="GridView1" runat="server" CssClass="m-lg-4">
+<asp:GridView ID="GridView1" runat="server" CssClass="m-lg-4">
     <Columns>
         <asp:BoundField  DataField="Id" HeaderText="Sno"/>
         <asp:BoundField DataField="Name" HeaderText="Name"/>
         <asp:BoundField DataField="Price" HeaderText="Price"/>
     </Columns>
-</asp:GridView>--%>
+</asp:GridView>
 </asp:Content>

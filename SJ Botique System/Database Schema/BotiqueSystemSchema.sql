@@ -293,7 +293,7 @@ End
 
 --drop procedure sign_up
 
-Alter procedure sign_up
+Create procedure sign_up
 @name nvarchar(30),
 @address nvarchar(100),
 @age int,

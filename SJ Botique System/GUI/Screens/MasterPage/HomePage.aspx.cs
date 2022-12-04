@@ -1,4 +1,5 @@
 ﻿//using SJ_Botique_System.App_Start;
+using SJ_Botique_System.App_Start;
 using SJ_Botique_System.Entities;
 //using SJ_Botique_System.HelperClasses;
 using System;
@@ -16,7 +17,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-  //          StringBuilder query = new StringBuilder();
+           StringBuilder query = new StringBuilder();
 
             //query.Append($"SELECT Id, Name, Description FROM ROLE");
 
@@ -36,12 +37,12 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
             // =========================================================================
 
             // Code Working Fine for Show All Products
-            //query.Clear();
-            //query.Append($"SELECT Id, Name, Price FROM Product");
-            //var result = DbUtility.GetDataTable(query.ToString());
-            //GridView1.AutoGenerateColumns = false;
-            //GridView1.DataSource = result;
-            //GridView1.DataBind();
+            query.Clear();
+            query.Append($"SELECT Id, Name, Price FROM Product");
+            var result = DbUtility.GetDataTable(query.ToString());
+            GridView1.AutoGenerateColumns = false;
+            GridView1.DataSource = result;
+            GridView1.DataBind();
 
 
             // =========================================================================
