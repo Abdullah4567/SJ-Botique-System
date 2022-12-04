@@ -43,7 +43,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 }
                 else if (CurrentUser.RollName == "Inventory Manager")
                 {
-
+                    Response.Redirect("InventoryManager.aspx");
                 }
                 else if (CurrentUser.RollName == "Customer")
                 {

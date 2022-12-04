@@ -267,9 +267,10 @@ select * from [User]
 select * from [User_Role]
 insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111','pass123')
 insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111','pass123');
+insert into [User] values ('InventoryManager1','Block123',22,'inventory@gmail.com',GetDate(),'03214561111','pass123');
 select * from [Role]
 select * from User_Role
-insert into User_Role values (1,6,NULL,0,NULL)
+insert into User_Role values (3,4,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
@@ -297,7 +298,7 @@ select * from [User]
 
 --drop procedure sign_up
 
-Create procedure sign_up
+Alter procedure sign_up
 @name nvarchar(30),
 @address nvarchar(100),
 @age int,

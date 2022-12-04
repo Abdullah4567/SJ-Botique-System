@@ -1,6 +1,8 @@
 ﻿using SJ_Botique_System.App_Start;
+using SJ_Botique_System.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -12,17 +14,50 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void ShowData()
         {
             StringBuilder query = new StringBuilder();
-
-
+            List<Policy> Collection = new List<Policy>();
             query.Clear();
             query.Append($"SELECT Id, Policy_Type,Description FROM [Policy]");
             var result = DbUtility.GetDataTable(query.ToString());
-            GridView2.AutoGenerateColumns = false;
+            foreach (DataRow row in result.Rows)
+            {
+                int Id = Convert.ToInt32(row["Id"]);
+                string Type = row["Policy_Type"].ToString();
+                string Description = row["Description"].ToString();
+                if(Type=="Inventory Policy")
+                {
+                    Collection.Add(new InventoryPolicy(Id, Description));
+                }
+                else
+                {
+                    // Discount Policy
+                    Collection.Add(new DiscountPolicy(Id, Description));
+                }
+            }
             GridView2.DataSource = result;
             GridView2.DataBind();
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                string Id = (Session["userId"]?.ToString())?.Trim();
+                if (String.IsNullOrEmpty(Id))
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    string Path = Request.QueryString["from"]; // Use of Query String 
+                    if (Path == "PolicyButton")
+                    {
+                        InventoryManagerContent.Visible = true;
+                        ShowData();
+                    }
+                }
+            }
 
         }
         protected void cmdView_Click(object sender, EventArgs e)
@@ -36,13 +71,13 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
             query.Clear();
             query.Append($"DELETE FROM [Policy] WHERE Id='" + Id_to_del + "'");
             var result = DbUtility.GetDataTable(query.ToString());
-            GridView2.AutoGenerateColumns = false;
+            //GridView2.AutoGenerateColumns = false;
             GridView2.DataSource = result;
             GridView2.DataBind();
             query.Clear();
             query.Append($"Select * FROM [Policy]");
             result = DbUtility.GetDataTable(query.ToString());
-            GridView2.AutoGenerateColumns = false;
+            //GridView2.AutoGenerateColumns = false;
             GridView2.DataSource = result;
             GridView2.DataBind();
 

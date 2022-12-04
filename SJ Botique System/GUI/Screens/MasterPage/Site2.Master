@@ -124,8 +124,8 @@ body {
             <a class="navbar-brand text-secondary" href="#">About Us</a>
         </div>
         <div class="row">
-             
-             <a class="navbar-brand text-secondary" href="#">Logout</a>
+            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="m-2 p-2 navbar-brand text-secondary" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+             <%--<a class="navbar-brand text-secondary" href="#"></a>--%>
         </div>
     </div>
 </div>
@@ -148,7 +148,7 @@ body {
                        <button type="button" class="btn btn-outline-info btn-md btn-block" onserverclick="workShift" runat="server">WorkShifts</button>
                     </li>
                     <li class="mb-auto p-2">
-                       <button type="button" class="btn btn-outline-info btn-md btn-block">Inventory Policy</button>
+                       <button type="button" class="btn btn-outline-info btn-md btn-block" onserverclick="DisplayPolicy" runat="server">Store Policy</button>
                     </li>
                      <li class="mb-auto p-2">
                        <button type="button" class="btn btn-outline-info btn-md btn-block">Performance Reports</button>
