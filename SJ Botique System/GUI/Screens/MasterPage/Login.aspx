@@ -51,7 +51,7 @@
                            </div>
                             </div>
                             <div class="col-3 mx-auto">
-                        <label><b>Email Address</b></label>
+                        <label><b>Email</b></label>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder=""></asp:TextBox>
                         </div>

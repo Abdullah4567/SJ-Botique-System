@@ -99,7 +99,7 @@
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">&copy All right Reserved. &nbsp&nbsp <a href='https://www.facebook.com/' target="_blank"><i class="fa-brands fa-facebook mr-auto" ></i></a>&nbsp&nbsp <a href='https://web.whatsapp.com/' target="_blank"><i class="fa-brands fa-whatsapp mr-auto"></i></a>&nbsp&nbsp<i class="fa-brands fa-instagram mr-auto"></i></p>
+                        <p style="color:whitesmoke">&copy All right Reserved. &nbsp&nbsp <a href='https://www.facebook.com/' target="_blank"><i class="fa-brands fa-facebook mr-auto" ></i></a>&nbsp&nbsp <a href='https://web.whatsapp.com/' target="_blank"><i class="fa-brands fa-whatsapp mr-auto"></i></a>&nbsp&nbsp<a href='https://www.instagram.com/' target="_blank"><i class="fa-brands fa-instagram mr-auto"></i></a></p>
                     </div>
                 </div>
             </div>
