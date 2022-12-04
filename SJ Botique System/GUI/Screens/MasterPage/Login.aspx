@@ -2,33 +2,26 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-     <style>
-
+    <style>
         input[type = password], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type = text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-
-
-    </style>
-
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        input[type = text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+ </style>
      <section>
          <img src="../../imgs/upper-img-home.png" class="embed-responsive"/>
      </section>
@@ -58,13 +51,14 @@ input[type = text], select {
                            </div>
                             </div>
                             <div class="col-3 mx-auto">
-                        <label><b>Email Address</b></label>
+                        <label><b>Email</b></label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox1" runat="server" placeholder=""></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder=""></asp:TextBox>
                         </div>
                                 </div>
                             <div class="col-3 mx-auto">
-                                <b>Password</b>   <br /> <input type="password" id="inputpass"><br />
+                                <b>Password</b>   <br />
+                                <asp:TextBox class="form-control" ID="pass" runat="server" placeholder="" TextMode="Password"/>
                                 <div class="row justify-content-md-start">
                                  &nbsp &nbsp &nbsp<input id="Checkbox1" type="checkbox" onclick="toggle()"/>&nbsp<i> Show Password</i>
                                     </div>
@@ -72,13 +66,11 @@ input[type = text], select {
                <div class="col mx-auto">
                       <center>
                            <div class="form-group">
-                              <asp:Button class="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Login" Width="300"/>
-                               </div>
-                        
-                                </div>
-     
-                                </div>
-                      </div>
+                              <asp:Button class="btn btn-primary btn-block btn-lg" ID="btnLogin" OnClick="verifyLogin" runat="server" Text="Login" Width="300"/>
+                             </div>
+                        <asp:Label ID="Failture"  ForeColor="Red" runat="server" Text=""></asp:Label>
+                </div>
+    </div>
     <br />
  
                                 <img src="../../imgs/bottom-img-home.png" class="embed-responsive"/>
