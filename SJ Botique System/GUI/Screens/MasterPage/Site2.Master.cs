@@ -20,7 +20,7 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         }
         protected void workShift(object sender, EventArgs e)
         {
-            Response.Redirect("FloorManager.aspx?type=workShift");
+            Response.Redirect("FloorManager.aspx?from=workShiftButton");
         }
     }
 }
