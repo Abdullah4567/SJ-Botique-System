@@ -293,7 +293,7 @@ End
 
 --drop procedure sign_up
 
-Alter procedure sign_up
+create procedure sign_up
 @name nvarchar(30),
 @address nvarchar(100),
 @age int,
@@ -319,4 +319,3 @@ As Begin
 		set @userId = @uid;
 	end
 end
-

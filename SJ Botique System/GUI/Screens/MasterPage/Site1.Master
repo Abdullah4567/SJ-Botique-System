@@ -88,7 +88,7 @@
                             &nbsp;
                             <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Frequently Asked Questions</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click">">Created By</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click">Created By</asp:LinkButton>
                             &nbsp;
                         </p>
 
