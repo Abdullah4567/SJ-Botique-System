@@ -205,6 +205,7 @@
     <Content Include="GUI\imgs\EditItem.PNG" />
     <Content Include="GUI\imgs\SaveItem.PNG" />
     <Content Include="GUI\mycss\css.css" />
+    <Content Include="GUI\Screens\MasterPage\ShowProfile.aspx" />
     <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />
     <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />
@@ -2389,6 +2390,13 @@
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\ShowProfile.aspx.cs">
+      <DependentUpon>ShowProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\ShowProfile.aspx.designer.cs">
+      <DependentUpon>ShowProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

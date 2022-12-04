@@ -270,8 +270,13 @@ insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDat
 insert into [User] values ('InventoryManager1','Block123',22,'inventory@gmail.com',GetDate(),'03214561111','pass123');
 select * from [Role]
 select * from User_Role
+select * from [Policy]
 insert into User_Role values (3,4,NULL,0,NULL)
+select * from Role_Permission
 
+select  P.Name, P.Description from Role_Permission PR join Permission P on PR.Permission_id=P.Id where PR.Role_id= 6
+SELECT U.Name,Age,Email,Contact,U.Address, UR.Role_Id as RoleId, R.Name as Role From [User] U
+join User_Role UR on U.Id=UR.U_ID join [Role] R on UR.Role_Id = R.Id where U.Id = 1
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
 alter Procedure log_in

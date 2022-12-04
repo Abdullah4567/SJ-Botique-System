@@ -47,7 +47,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 }
                 else if (CurrentUser.RollName == "Customer")
                 {
-                    Response.Redirect("FloorManager.aspx");
+                    Response.Redirect("ShowProfile.aspx");
                 }
             }
             else
