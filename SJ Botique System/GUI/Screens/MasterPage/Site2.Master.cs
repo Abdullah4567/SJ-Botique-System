@@ -18,5 +18,9 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
             Response.Redirect("CreatedBy.aspx");
         }
+        protected void workShift(object sender, EventArgs e)
+        {
+            Response.Redirect("FloorManager.aspx?type=workShift");
+        }
     }
 }

@@ -182,6 +182,11 @@
     <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="GUI\imgs\AddItem.PNG" />
+    <Content Include="GUI\imgs\CancelItem.PNG" />
+    <Content Include="GUI\imgs\DeleteItem.PNG" />
+    <Content Include="GUI\imgs\EditItem.PNG" />
+    <Content Include="GUI\imgs\SaveItem.PNG" />
     <Content Include="GUI\mycss\css.css" />
     <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />

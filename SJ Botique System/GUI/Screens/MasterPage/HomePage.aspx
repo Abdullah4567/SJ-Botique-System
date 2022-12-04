@@ -1,7 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.Master_Page.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  <style>
+        input[type = password], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        input[type = text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+ </style>
      <section>
          <img src="../../imgs/upper-img-home.png" class="embed-responsive"/>
      </section>
@@ -52,19 +73,13 @@
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox1" runat="server" placeholder=""></asp:TextBox>
                         </div>
-                                </div>
+                         </div>
                             <div class="col-3 mx-auto">
-                       <%-- <b>Password</b><br /><input type="password" id="inputpass" width="200px">  
-                                <label><b>Create Password</b></label>
-                                <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox10" runat="server" placeholder="New Password" TextMode="Password"></asp:TextBox>
-                            </div>  
-                                --%>
-                                <b>Password</b>   <br /> <asp:TextBox class="form-control" ID="TextBox3" runat="server" placeholder=""></asp:TextBox><br />
-                                <div class="row justify-content-md-start">
+                        <b>Password</b><br /><input type="password" id="inputpass" width="200px">  
+                             <div class="row justify-content-md-start">
                                  &nbsp &nbsp &nbsp<input id="Checkbox1" type="checkbox" onclick="toggle()"/>&nbsp<i> Show Password</i>
                                     </div>
-                                    <br />
+                                </div>
                <div class="col mx-auto">
                       <center>
                            <div class="form-group">
