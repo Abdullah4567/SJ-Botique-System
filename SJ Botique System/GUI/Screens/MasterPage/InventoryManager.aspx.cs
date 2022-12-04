@@ -57,28 +57,31 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
 
             if (myStringFromTheInput == "")
             {
-                Response.Write("<script>alert('Policy text field cannotbe empty');</script>");
-                return;
+                FailturePolicy.Text = "Please Enter Valid Data";
+                SuccessPolicy.Text = "";
+            }
+            else
+            {
+                StringBuilder query = new StringBuilder();
+                query.Clear();
+                query.Append($"insert into [Policy] values('"+type+"','"+myStringFromTheInput+"')" );
+
+                var result = DbUtility.GetDataTable(query.ToString());
+                GridView2.AutoGenerateColumns = false;
+                GridView2.DataSource = result;
+                GridView2.DataBind();
+
+                query.Clear();
+                query.Append($"Select * FROM [Policy]");
+                result = DbUtility.GetDataTable(query.ToString());
+                GridView2.AutoGenerateColumns = false;
+                GridView2.DataSource = result;
+                SuccessPolicy.Text = "New Policy Added";
+                FailturePolicy.Text = "";
+                GridView2.DataBind();
+                myTextBox.Value = "";
 
             }
-
-            StringBuilder query = new StringBuilder();
-            query.Clear();
-            query.Append($"insert into [Policy] values('"+type+"','"+myStringFromTheInput+"')" );
-
-            var result = DbUtility.GetDataTable(query.ToString());
-            GridView2.AutoGenerateColumns = false;
-            GridView2.DataSource = result;
-            GridView2.DataBind();
-
-            query.Clear();
-            query.Append($"Select * FROM [Policy]");
-            result = DbUtility.GetDataTable(query.ToString());
-            GridView2.AutoGenerateColumns = false;
-            GridView2.DataSource = result;
-            GridView2.DataBind();
-            myTextBox.Value = "";
-
 
         }
 

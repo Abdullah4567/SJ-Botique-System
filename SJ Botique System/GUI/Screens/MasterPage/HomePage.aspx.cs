@@ -37,12 +37,12 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
             // =========================================================================
 
             // Code Working Fine for Show All Products
-            query.Clear();
-            query.Append($"SELECT Id, Name, Price FROM Product");
-            var result = DbUtility.GetDataTable(query.ToString());
-            GridView1.AutoGenerateColumns = false;
-            GridView1.DataSource = result;
-            GridView1.DataBind();
+            //query.Clear();
+            //query.Append($"SELECT Id, Name, Price FROM Product");
+            //var result = DbUtility.GetDataTable(query.ToString());
+            //GridView1.AutoGenerateColumns = false;
+            //GridView1.DataSource = result;
+            //GridView1.DataBind();
 
 
             // =========================================================================

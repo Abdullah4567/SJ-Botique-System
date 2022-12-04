@@ -15,7 +15,7 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
             if(!IsPostBack)
             {
-                string Id = (Session["userId"].ToString())?.Trim();
+                string Id = (Session["userId"]?.ToString())?.Trim();
                 if (String.IsNullOrEmpty(Id))
                 {
                     Response.Redirect("Login.aspx");
