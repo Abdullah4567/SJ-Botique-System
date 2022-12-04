@@ -18,12 +18,57 @@
            
         </ItemTemplate>
     </asp:TemplateField>
-    </Columns>
-        </asp:GridView>
 
+<%--        <br /><br />--%>
+
+       
+
+
+    </Columns>
+        </asp:GridView>  
+
+
+
+
+
+          
+
+          <br /><br />
+
+        <h3>Select the type of policy</h3>
+
+        <br />
+
+
+        <asp:RadioButtonList ID="policy_type" runat="server">
+<asp:ListItem Value="Inventory" Selected="True"> Inventory Policy</asp:ListItem>
+<asp:ListItem Value="Discount"> Discount Policy</asp:ListItem>
+</asp:RadioButtonList>
+
+<%--        <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" value="Inventory" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Inventory Policy
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" value="Discount" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+   Discount Policy
+  </label>
+</div>--%>
+
+<%--        <input id="mytextbox" type="text" style="width: 45%;height: 100px;"/>--%>
+        <input type="text" name="email" id="myTextBox" runat="server" style="width: 45%;height: 100px;" />
+
+             <br />   
+
+    
+         <asp:Button ID="btn3" class="btn btn-primary" Text ="Add" runat="server" CommandName="Add" OnClick="Add_policy"/>
 
         
 
+          
 
     </center>
         <hr />

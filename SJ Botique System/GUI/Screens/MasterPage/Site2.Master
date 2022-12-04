@@ -13,8 +13,6 @@
     <link href="../../fontawesome/css/all.css" rel="stylesheet" />
     <%--jquery--%>
     <script src="../../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
-     <%--my custom stylesheet--%>
-    <link href="../../mycss/css.css" rel="stylesheet" />
     <%--popper js--%>
     <script src="../../bootstrap/js/popper.min.js"></script>
     <%--bootstrap js--%>
@@ -176,7 +174,7 @@ body {
         <!-- Main Content Placeholder -->
 
             <!-- Footer -->
-    <footer>
+    <%--<footer>
             <div id="footer1" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -201,7 +199,7 @@ body {
                 </div>
             </div>
 
-        </footer>
+        </footer>--%>
         <!-- ./Footer -->
     </form>
 </body>
