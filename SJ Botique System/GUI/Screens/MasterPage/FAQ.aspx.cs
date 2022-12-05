@@ -7,15 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace SJ_Botique_System.GUI.Screens.MasterPage
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class FAQ : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string Id = (Session["userId"]?.ToString())?.Trim();
-            if (String.IsNullOrEmpty(Id))
-            {
-                Response.Redirect("Login.aspx");
-            }
+
         }
     }
 }

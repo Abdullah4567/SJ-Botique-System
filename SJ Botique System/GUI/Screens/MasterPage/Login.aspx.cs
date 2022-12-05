@@ -28,14 +28,14 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
             string email = txtEmail.Text;
             string password = pass.Text;
             LoginDetails CurrentUser = DbUtility.InsertForLogin(query.ToString(), email, password);
-            if (CurrentUser.UserId!=-1)
+            if (CurrentUser.UserId != -1)
             {
                 // Valid User 
                 Session["userId"] = CurrentUser.UserId;
                 Session["roleName"] = CurrentUser.RollName;
-                if(CurrentUser.RollName=="Admin")
+                if (CurrentUser.RollName == "Admin")
                 {
-
+                   Response.Redirect("Admin.aspx");
                 }
                 else if (CurrentUser.RollName == "Floor Manager")
                 {
@@ -47,7 +47,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 }
                 else if (CurrentUser.RollName == "Customer")
                 {
-                    Response.Redirect("ShowProfile.aspx");
+                    Response.Redirect("DisplayProducts.aspx");
                 }
             }
             else

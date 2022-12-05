@@ -15,7 +15,15 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShowProducts();
+            string Id = (Session["userId"]?.ToString())?.Trim();
+            if (String.IsNullOrEmpty(Id))
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                ShowProducts();
+            }
         }
         protected void ShowProducts()
         {
@@ -23,12 +31,12 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
             List<Product> Collection = new List<Product>();
             // Code Working Fine for Show All Products
             query.Clear();
-            query.Append($"SELECT Id, Name, Price FROM Product");
+            query.Append($"SELECT Id, Name, Description , Price FROM Product");
             var result = DbUtility.GetDataTable(query.ToString());
             GridView1.AutoGenerateColumns = false;
             GridView1.DataSource = result;
             GridView1.DataBind();
-            
+
             foreach (DataRow row in result.Rows)
             {
                 int Id = Convert.ToInt32(row["Id"]);

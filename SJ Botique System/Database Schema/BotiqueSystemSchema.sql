@@ -19,7 +19,7 @@ Age int NOT NULL check (Age>0 and Age <100),
 Email nvarchar(50) NOT NULL,
 CreatedAt datetime NOT NULL,
 Contact nvarchar(30) NOT NULL,
-[Password] varchar(20) NOT NULL
+[Password] Binary(64) NOT NULL
 )
 
 go
@@ -85,7 +85,8 @@ create table Product
 (Id int Identity(1,1) primary key,
 [Name] nvarchar(30) NOT NULL,
 Price float NOT NULL,
-Quantity int NOT NULL CHECK(quantity >0 and quantity < 1000)
+Quantity int NOT NULL CHECK(quantity >0 and quantity < 1000),
+[Description] nvarchar(100)
 )
 
 go
@@ -213,6 +214,7 @@ INSERT INTO [Role] values ('Floor Manager', 'A company employee in charge of an 
 INSERT INTO [Role] values ('Inventory Manager', 'A company employee managing inventory and policies')
 INSERT INTO [Role] values ('Store Manager', 'A company employee monitoring duties of an outlet')
 INSERT INTO [Role] values ('Admin', 'A company head in charge of all outlets, employees and customers')
+INSERT INTO [Role] values ('Supplier', 'Person in charge of supplying products to the inventory')
 
 INSERT INTO Permission values ('Order', 'Place/cancel order and buy/return products')
 INSERT INTO Permission values ('Mark Attendance', 'Mark attendance at a particular date')
@@ -242,16 +244,15 @@ INSERT INTO Role_Permission values (6, 10)
 INSERT INTO Role_Permission values (6, 11)
 --select * from Role_Permission
 
-Insert into Product ([Name],[Price],[Quantity]) values ('Shirt',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Bags',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Covers',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Jackets',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Hoodies',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Pents',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Shoes',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Suits',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Sandals',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('CottonShirt',250,10)
+Insert into Product values ('Shirt',449,50, 'A plain polo T-Shirt available in all sizes for men')
+Insert into Product values ('Bags',899,10, 'Snake skin bag made from top quality imported material')
+Insert into Product values ('Jackets',1199,25, 'Blue denim jacket part of S&M unisex clothing line')
+Insert into Product values ('Hoodies',799,25, 'Loose fitting hooded sweater part of S&M unisex clothing line')
+Insert into Product values ('Pants',599,50, 'Courdroy pants perfect for casual and semi-formal dressing')
+Insert into Product values ('Shoes',1899,40, 'Perfectly all rounded hiking boots made for the roughest of terrains')
+Insert into Product values ('Suits',8999,10, 'Eye catching 3-piece and 2-piece suits custom fitted to your needs')
+Insert into Product values ('Sandals',499,50, 'Comfortable and casual wear sandals ideal for daily use')
+Insert into Product values ('CottonShirt',1099,30, 'Semi-formal shirt made from soft and breathable cotton')
 
 delete from WorkShift
 insert into WorkShift values ('Evening', DATEADD(hour, 0, GetDate()),DATEADD(hour, 2, GetDate()))
@@ -265,23 +266,17 @@ select * from WorkShift
 
 select * from [User]
 select * from [User_Role]
-insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111','pass123')
-insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111','pass123');
-insert into [User] values ('InventoryManager1','Block123',22,'inventory@gmail.com',GetDate(),'03214561111','pass123');
+insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'))
+insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
 select * from [Role]
 select * from User_Role
-select * from [Policy]
-insert into User_Role values (3,4,NULL,0,NULL)
-select * from Role_Permission
+insert into User_Role values (1,6,NULL,0,NULL)
 
-select  P.Name, P.Description from Role_Permission PR join Permission P on PR.Permission_id=P.Id where PR.Role_id= 6
-SELECT U.Name,Age,Email,Contact,U.Address, UR.Role_Id as RoleId, R.Name as Role From [User] U
-join User_Role UR on U.Id=UR.U_ID join [Role] R on UR.Role_Id = R.Id where U.Id = 1
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
-alter Procedure log_in
+create Procedure log_in
 @email nvarchar(50),
-@pass nvarchar(30),
+@pass nvarchar(64),
 @userid int output,
 @roleName nvarchar(30) output
 As Begin
@@ -290,26 +285,35 @@ As Begin
 	set @roleid = -1
 	Set @roleName='unknown';
 
-	if EXISTS(Select * from [User] u where u.Email = @email and u.Password = @pass)
+	if EXISTS(Select * from [User] u where u.Email=@email and u.Password = Hashbytes('SHA2_512', @pass))
 	Begin
+		print 'Hello'
 		Select @userid = u.Id, @roleid = ur.Role_Id from [User] u 
-		JOIN User_Role ur on u.Id = ur.Id
-		where u.Email = @email and u.Password = @pass;
+		JOIN User_Role ur on u.Id = ur.U_ID
+		where u.Email = @email
 		Select  @roleName=R.Name from [Role] R  where R.Id= @roleId;
 	End
 End
+
+--declare @userId1 int 
+--declare @rolename1 nvarchar(30)
+--exec [dbo].log_in @email='ali@gmail.com' , @pass= 'pass123', @userid=@userId1 output , @roleName=@roleName1 output
+--select @userId1 as Val
+
 select * from [User]
+select * from [User_Role]
+select * from [Role]
 ------ SIGNUP PROCEDURE ------
 
 --drop procedure sign_up
 
-create procedure sign_up
+Create procedure sign_up
 @name nvarchar(30),
 @address nvarchar(100),
 @age int,
 @email nvarchar(50),
 @contact nvarchar(30),
-@pass nvarchar(20),
+@pass nvarchar(64),
 @userId int output
 
 As Begin
@@ -320,7 +324,7 @@ As Begin
 		set @userId = 0
 	else begin
 		
-		INSERT INTO [User] values(@name, @address, @age, @email,GETDATE(), @contact, @pass)
+		INSERT INTO [User] values(@name, @address, @age, @email,GETDATE(), @contact, Hashbytes('SHA2_512',@pass))
 
 		declare @uid int
 		Select @uid = u.Id from [User] u where u.Email = @email

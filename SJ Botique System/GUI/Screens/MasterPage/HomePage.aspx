@@ -1,5 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.Master_Page.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script>
+        function togglePassword() {
+            var ref = $("#ContentPlaceHolder1_inputpass");
+            if (ref[0].type == "password") {
+                ref[0].type = "text";
+            }
+            else {
+                ref[0].type = "password";
+            }
+        }
+</script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -61,7 +72,7 @@
                            </div>
                                <div class="col-2">
                         <label><b>Age</b></label>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                            <asp:TextBox class="form-control" ID="txtAge" runat="server" placeholder="" TextMode="Number"></asp:TextBox>
                         </div>
                            </div>
@@ -88,16 +99,11 @@
                          </div>
                             <div class="col-3 mx-auto">
                         <b>Create Password</b><br />
-                                <asp:TextBox ID="inputpass" width="200px" runat="server" TextMode="Password"></asp:TextBox> 
+                                <asp:TextBox ID="inputpass" runat="server" TextMode="Password"></asp:TextBox> 
                              <div class="row justify-content-md-start">
-                                 &nbsp &nbsp &nbsp<input id="Checkbox1" type="checkbox" onclick="toggle()"/>&nbsp<i> Show Password</i>
+                                 &nbsp &nbsp <input id="Checkbox1" type="checkbox" onchange="togglePassword();"/> &nbsp<i> Show Password</i>
                                     </div>
-                                </div>  
-                                
-                                <%--<b>Password</b>   <br /> <asp:TextBox class="form-control" ID="inputpass" runat="server" placeholder=""></asp:TextBox><br />
-                                <div class="row justify-content-md-start">
-                                 &nbsp &nbsp &nbsp<input id="Checkbox1" type="checkbox" onclick="toggle()"/>&nbsp<i> Show Password</i>
-                                    --%>
+                                </div>
                                     <br />
                <div class="col mx-auto">
                       <center>
