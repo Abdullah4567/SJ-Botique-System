@@ -1,5 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.Master_Page.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        function togglePassword() {
+            var ref = $("#ContentPlaceHolder1_pass");
+            if (ref[0].type == "password") {
+                ref[0].type = "text";
+            }
+            else {
+                ref[0].type = "password";
+            }
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
@@ -58,9 +69,11 @@
                                 </div>
                             <div class="col-3 mx-auto">
                                 <b>Password</b>   <br />
-                                <asp:TextBox class="form-control" ID="pass" runat="server" placeholder="" TextMode="Password"/>
+                                <asp:TextBox class="form-control" ID="pass" runat="server" placeholder="" TextMode="Password" />
                                 <div class="row justify-content-md-start">
-                                 &nbsp &nbsp &nbsp<input id="Checkbox1" type="checkbox" onclick="toggle()"/>&nbsp<i> Show Password</i>
+                                 &nbsp &nbsp &nbsp
+                                    <input id="Checkbox1" type="checkbox" onchange="togglePassword();"/> &nbsp<i> Show Password</i>
+                                 <%--<asp:CheckBox OnClientClick="return togglePassword();" ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged1"/>  &nbsp<i> Show Password</i>--%>
                                     </div>
                                     <br />
                <div class="col mx-auto">

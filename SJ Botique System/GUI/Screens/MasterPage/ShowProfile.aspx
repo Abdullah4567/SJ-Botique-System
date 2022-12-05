@@ -22,41 +22,41 @@
                         <center>
                             <div class="col-3 mx-auto" style="display: flex">
                                 <label><b>Name &nbsp &nbsp &nbsp</b></label>
-                                <asp:TextBox class="form-control" ID="TextBox8" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="User Name" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtName" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="User Name" ReadOnly="true"></asp:TextBox>
                            </div>
 
                                <div class="col-3 mx-auto" style="display: flex">
                         <label><b>Age&nbsp &nbsp &nbsp</b></label>
                         <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox2" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Age" ReadOnly="true"></asp:TextBox>
+                           <asp:TextBox class="form-control" ID="txtAge" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Age" ReadOnly="true" TextMode="Number"></asp:TextBox>
                         </div>
                            </div>
 
                             <div class="col-3 mx-auto" style="display: flex">
                                 <label><b>Email Address &nbsp &nbsp &nbsp</b></label>
                                 <div class="form-group">
-                                   <asp:TextBox class="form-control" style="outline: 0;border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" ID="TextBox1" runat="server" placeholder="Email Address" ReadOnly="true"></asp:TextBox>
+                                   <asp:TextBox class="form-control"  ID="txtEmail"  style="outline: 0;border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Email Address" ReadOnly="true"></asp:TextBox>
                                 </div>
                             </div>
 
                              <div class="col-3 mx-auto"  style="display: flex"  >
                         <label><b>Contact &nbsp &nbsp &nbsp</b></label>
                         <div class="form-group">
-                            <asp:TextBox class="form-control" ID="TextBox3" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Contact" ReadOnly="true"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="txtContact" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Contact" ReadOnly="true"></asp:TextBox>
                         </div>
                                 </div>
 
                              <div class="col-3 mx-auto"  style="display: flex"  >
                         <label><b>Address &nbsp &nbsp &nbsp</b></label>
                         <div class="form-group">
-                            <asp:TextBox class="form-control" ID="TextBox4" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Address" ReadOnly="true"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="txtAddress" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Address" ReadOnly="true"></asp:TextBox>
                         </div>
                                 </div>
 
                              <div class="col-3 mx-auto" style="display: flex" >
                         <label><b>Role &nbsp &nbsp &nbsp</b></label>
                         <div class="form-group">
-                            <asp:TextBox class="form-control" ID="TextBox5" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Role" ReadOnly="true"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="txtRoleName" style="outline: 0; border-width: 0 0 2px; border-color:navy; background-color:transparent; text-align:center" runat="server" placeholder="Role" ReadOnly="true"></asp:TextBox>
                         </div>
                                 </div>
 
@@ -64,13 +64,32 @@
                         <label><b>Permissions: </b></label>
 
                                 </div>
-                            <asp:GridView ID="GridView2" runat="server" CssClass="m-lg-4">
+                            <asp:GridView ID="GridView2" runat="server" CssClass="m-lg-4" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
+                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                     <Columns>
-                                        <asp:BoundField DataField="Name" HeaderText="Name" HeaderStyle-Font-Names="Courier New, monospace" HeaderStyle-HorizontalAlign="Center" ItemStyle-Font-Names="Courier New, monospace" ItemStyle-Width="30%"/>
-                                        <asp:BoundField DataField="Description" HeaderText="Description" HeaderStyle-Font-Names="Courier New, monospace"  ItemStyle-Font-Names="Courier New, monospace" ItemStyle-Width="80%"/>
+                                        <asp:BoundField DataField="Name" HeaderText="Name" HeaderStyle-Font-Names="Courier New, monospace" HeaderStyle-HorizontalAlign="Center" ItemStyle-Font-Names="Courier New, monospace" ItemStyle-Width="30%">
+<HeaderStyle HorizontalAlign="Center" Font-Names="Courier New,monospace"></HeaderStyle>
+
+<ItemStyle Font-Names="Courier New,monospace" Width="30%"></ItemStyle>
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="Description" HeaderText="Description" HeaderStyle-Font-Names="Courier New, monospace"  ItemStyle-Font-Names="Courier New, monospace" ItemStyle-Width="80%">
+<HeaderStyle Font-Names="Courier New,monospace"></HeaderStyle>
+
+<ItemStyle Font-Names="Courier New,monospace" Width="80%"></ItemStyle>
+                                        </asp:BoundField>
                                     </Columns>
+                                    <EditRowStyle BackColor="#999999" />
+                                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                 </asp:GridView>
                       
     <br />
- </div>
+    </div>
 </asp:Content>
