@@ -28,12 +28,12 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
             string email = txtEmail.Text;
             string password = pass.Text;
             LoginDetails CurrentUser = DbUtility.InsertForLogin(query.ToString(), email, password);
-            if (CurrentUser.UserId!=-1)
+            if (CurrentUser.UserId != -1)
             {
                 // Valid User 
                 Session["userId"] = CurrentUser.UserId;
                 Session["roleName"] = CurrentUser.RollName;
-                if(CurrentUser.RollName=="Admin")
+                if (CurrentUser.RollName == "Admin")
                 {
 
                 }
@@ -56,6 +56,43 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 Failture.Text = "Please Enter Valid Credentials";
             }
 
+        }
+        protected void checkbox1_CheckedChanged(object sender, EventArgs e)
+        {
+            var type = pass.TextMode.ToString();
+            if (type == "Password")
+            {
+                pass.TextMode = TextBoxMode.SingleLine ;
+            }
+            else
+            {
+                pass.TextMode = TextBoxMode.Password;
+            }
+        }
+        protected void Unnamed_Click1(object sender, ImageClickEventArgs e)
+        {
+            var type = pass.TextMode.ToString();
+            if (type == "Password")
+            {
+                pass.TextMode = TextBoxMode.SingleLine;
+            }
+            else
+            {
+                pass.TextMode = TextBoxMode.Password;
+            }
+        }
+
+        protected void CheckBox1_CheckedChanged1(object sender, EventArgs e)
+        {
+            var type = pass.TextMode.ToString();
+            if (type == "Password")
+            {
+                pass.TextMode = TextBoxMode.SingleLine;
+            }
+            else
+            {
+                pass.TextMode = TextBoxMode.Password;
+            }
         }
     }
 }

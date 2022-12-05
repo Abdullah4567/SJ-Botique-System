@@ -17,6 +17,16 @@ namespace SJ_Botique_System.GUI
         {
             Response.Redirect("CreatedBy.aspx");
         }
-        
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void LinkButton7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowProfile.aspx");
+        }
     }
 }

@@ -1,9 +1,13 @@
 ﻿using SJ_Botique_System.App_Start;
-using SJ_Botique_System.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Linq;
 using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using SJ_Botique_System.Entities;
 
 namespace SJ_Botique_System.GUI.Screens.MasterPage
 {
@@ -24,7 +28,7 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
             GridView1.AutoGenerateColumns = false;
             GridView1.DataSource = result;
             GridView1.DataBind();
-            
+
             foreach (DataRow row in result.Rows)
             {
                 int Id = Convert.ToInt32(row["Id"]);

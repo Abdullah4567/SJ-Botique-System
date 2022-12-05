@@ -104,6 +104,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                     {
                         // Valid User 
                         Session["userId"] = UserId;
+                        Session["roleName"] = "Customer";
                         //Response.Redirect();
                     }
                 }
