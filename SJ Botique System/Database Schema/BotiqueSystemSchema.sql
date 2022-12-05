@@ -274,7 +274,7 @@ insert into User_Role values (1,6,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
-alter Procedure log_in
+create Procedure log_in
 @email nvarchar(50),
 @pass nvarchar(64),
 @userid int output,
@@ -284,6 +284,7 @@ As Begin
 	set @userid = -1
 	set @roleid = -1
 	Set @roleName='unknown';
+
 	if EXISTS(Select * from [User] u where u.Email=@email and u.Password = Hashbytes('SHA2_512', @pass))
 	Begin
 		print 'Hello'
