@@ -2278,6 +2278,7 @@
     <Content Include="GUI\Screens\MasterPage\InventoryManager.aspx" />
     <Content Include="GUI\Screens\MasterPage\FloorManager.aspx" />
     <Content Include="GUI\Screens\MasterPage\ShowAndSearchProducts.aspx" />
+    <Content Include="GUI\Screens\MasterPage\About.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2440,6 +2441,13 @@
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\ShowAndSearchProducts.aspx.designer.cs">
       <DependentUpon>ShowAndSearchProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\OutletInventoryOperations.cs" />
     <Compile Include="Interfaces\OutletOperations.cs" />
