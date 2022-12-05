@@ -107,6 +107,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\SJ Botique System.dll" />
+    <Content Include="bin\SJ Botique System.pdb" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -180,7 +199,13 @@
     <Content Include="GUI\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="GUI\fontawesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="GUI\imgs\AddItem.PNG" />
+    <Content Include="GUI\imgs\CancelItem.PNG" />
+    <Content Include="GUI\imgs\DeleteItem.PNG" />
+    <Content Include="GUI\imgs\EditItem.PNG" />
+    <Content Include="GUI\imgs\SaveItem.PNG" />
     <Content Include="GUI\mycss\css.css" />
+    <Content Include="GUI\Screens\MasterPage\ShowProfile.aspx" />
     <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />
     <Content Include=".vs\SJ Botique System\v17\workspaceFileList.bin" />
@@ -188,6 +213,7 @@
     <Content Include=".vs\VSWorkspaceState.json" />
     <Content Include="GUI\Screens\MasterPage\Admin.aspx" />
     <Content Include="GUI\Screens\MasterPage\Site2.Master" />
+    <Content Include="bin\SJ Botique System.dll.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="GUI\bootstrap\css\bootstrap.min.css" />
     <Content Include="GUI\bootstrap\js\bootstrap.min.js" />
@@ -2365,6 +2391,13 @@
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\ShowProfile.aspx.cs">
+      <DependentUpon>ShowProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\ShowProfile.aspx.designer.cs">
+      <DependentUpon>ShowProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

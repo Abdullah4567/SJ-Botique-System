@@ -18,5 +18,19 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
             Response.Redirect("CreatedBy.aspx");
         }
+        protected void workShift(object sender, EventArgs e)
+        {
+            Response.Redirect("FloorManager.aspx?from=workShiftButton");
+        }
+        protected void DisplayPolicy(object sender, EventArgs e)
+        {
+            Response.Redirect("InventoryManager.aspx?from=PolicyButton");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
+        }
     }
 }

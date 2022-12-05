@@ -25,9 +25,8 @@
         {
             this.Value = _value;
         }
-        public LoyaltyPoints(int _id, double _value)
+        public LoyaltyPoints(double _value)
         {
-            this.Id = _id;
             this.Value = _value;
         }
     }

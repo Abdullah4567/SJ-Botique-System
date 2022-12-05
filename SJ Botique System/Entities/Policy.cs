@@ -23,6 +23,7 @@ namespace SJ_Botique_System.Entities
         }
         abstract public void AddPolicy();
        abstract public void ModifyPolicy();
+        abstract public string GetPolicyType();
         public Policy(int _id,string _description)
         {
             this.Id = _id;

@@ -266,11 +266,20 @@ select * from WorkShift
 select * from [User]
 select * from [User_Role]
 insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111','pass123')
-insert into User_Role values (1,6,NULL,0,NULL)
+insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111','pass123');
+insert into [User] values ('InventoryManager1','Block123',22,'inventory@gmail.com',GetDate(),'03214561111','pass123');
+select * from [Role]
+select * from User_Role
+select * from [Policy]
+insert into User_Role values (3,4,NULL,0,NULL)
+select * from Role_Permission
 
+select  P.Name, P.Description from Role_Permission PR join Permission P on PR.Permission_id=P.Id where PR.Role_id= 6
+SELECT U.Name,Age,Email,Contact,U.Address, UR.Role_Id as RoleId, R.Name as Role From [User] U
+join User_Role UR on U.Id=UR.U_ID join [Role] R on UR.Role_Id = R.Id where U.Id = 1
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
-create Procedure log_in
+alter Procedure log_in
 @email nvarchar(50),
 @pass nvarchar(30),
 @userid int output,
@@ -279,6 +288,7 @@ As Begin
 	Declare @roleId int =-1;
 	set @userid = -1
 	set @roleid = -1
+	Set @roleName='unknown';
 
 	if EXISTS(Select * from [User] u where u.Email = @email and u.Password = @pass)
 	Begin
@@ -288,7 +298,7 @@ As Begin
 		Select  @roleName=R.Name from [Role] R  where R.Id= @roleId;
 	End
 End
-
+select * from [User]
 ------ SIGNUP PROCEDURE ------
 
 --drop procedure sign_up

@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    /*height: 100vh;*/
     overflow-x: hidden;
 }
 
@@ -26,4 +26,8 @@ body {
     background-position: center;
     background-size: 1000px;
     background-image: url('../imgs/center-img-home.png');
+}
+.grid1{
+    margin-left:auto;
+    margin-right:auto
 }
