@@ -46,12 +46,10 @@ namespace SJ_Botique_System.Entities
         {
             this.Quantity = _quantity;
         }
-        public Product( int _id, string _name, double _price, int _quantity)
+        public Product(string _name, double _price)
         {
-            this.Id = _id;
             this.Name = _name;
             this.Price = _price;
-            this.Quantity = _quantity;
         }
     }
 }
