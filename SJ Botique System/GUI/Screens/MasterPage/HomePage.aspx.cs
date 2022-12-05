@@ -97,15 +97,19 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                     int UserId  = DbUtility.InsertForSignUp(query.ToString(),Name ,Email, Password,Age,Contact, Address);
 
                     // Creating New Customer
-                    Customer newCustomer = new Customer(Name, Age, Address, Email, Password, Contact, new LoyaltyPoints(0));
-                    newCustomer.SetId(UserId);
-
-                    if (UserId != -1)
+                    if(UserId!=-1)
                     {
-                        // Valid User 
+                        Customer newCustomer = new Customer(Name, Age, Address, Email, Password, Contact, new LoyaltyPoints(0));
+                        newCustomer.SetId(UserId);
                         Session["userId"] = UserId;
                         Session["roleName"] = "Customer";
-                        //Response.Redirect();
+                        Response.Redirect("DisplayProducts.aspx");
+                    }
+                    else
+                    {
+                        Failture.Text = "User With this Email has already been created";
+                        string path = Request.Url.ToString();
+                        //Response.Redirect(path);
                     }
                 }
                 else

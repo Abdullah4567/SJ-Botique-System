@@ -56,5 +56,9 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
             Response.Redirect("ShowProfile.aspx");
         }
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("ShowProfile.aspx");
+        }
     }
 }

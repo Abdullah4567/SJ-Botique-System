@@ -32,6 +32,7 @@
                     <!--<img src="../../imgs/SJ%20Boutique.png" />-->
                  S & J Boutique
                 </a>
+                    <asp:LinkButton ID="btnAbout" runat="server" Text="About Us" CssClass="nav-link mt-1" Font-Size="Large" ForeColor="Black"/>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,30 +41,26 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="homepage.aspx">Home</a>
+                          
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">About Us</a>
+                            
                         </li>
 
                     </ul>
 
                     <ul class="navbar-nav">
-                        
-                   <!--     <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">Login</asp:LinkButton>
-                        </li>  -->
-                    <!--    <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Sign Up</asp:LinkButton>
-                        </li>  -->
+                        <li>
+                            <asp:LinkButton class="nav-link" ID="homeButton"  runat="server" OnClick="btnHome_Click"> Home </asp:LinkButton>
+                        </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="btnLogout" runat="server" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="btnUser" runat="server" OnClick="LinkButton7_Click">Hello user</asp:LinkButton>
                         </li>
 
-                        <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click">Hello user</asp:LinkButton>
 
-                        </li>
                     </ul>
                 </div>
 

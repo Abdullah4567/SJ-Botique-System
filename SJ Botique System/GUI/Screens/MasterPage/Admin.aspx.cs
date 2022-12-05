@@ -11,7 +11,11 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string Id = (Session["userId"]?.ToString())?.Trim();
+            if (String.IsNullOrEmpty(Id))
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

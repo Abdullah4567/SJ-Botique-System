@@ -35,7 +35,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 Session["roleName"] = CurrentUser.RollName;
                 if (CurrentUser.RollName == "Admin")
                 {
-
+                   Response.Redirect("Admin.aspx");
                 }
                 else if (CurrentUser.RollName == "Floor Manager")
                 {
@@ -47,7 +47,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 }
                 else if (CurrentUser.RollName == "Customer")
                 {
-                    Response.Redirect("ShowProfile.aspx");
+                    Response.Redirect("DisplayProducts.aspx");
                 }
             }
             else
@@ -56,43 +56,6 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 Failture.Text = "Please Enter Valid Credentials";
             }
 
-        }
-        protected void checkbox1_CheckedChanged(object sender, EventArgs e)
-        {
-            var type = pass.TextMode.ToString();
-            if (type == "Password")
-            {
-                pass.TextMode = TextBoxMode.SingleLine ;
-            }
-            else
-            {
-                pass.TextMode = TextBoxMode.Password;
-            }
-        }
-        protected void Unnamed_Click1(object sender, ImageClickEventArgs e)
-        {
-            var type = pass.TextMode.ToString();
-            if (type == "Password")
-            {
-                pass.TextMode = TextBoxMode.SingleLine;
-            }
-            else
-            {
-                pass.TextMode = TextBoxMode.Password;
-            }
-        }
-
-        protected void CheckBox1_CheckedChanged1(object sender, EventArgs e)
-        {
-            var type = pass.TextMode.ToString();
-            if (type == "Password")
-            {
-                pass.TextMode = TextBoxMode.SingleLine;
-            }
-            else
-            {
-                pass.TextMode = TextBoxMode.Password;
-            }
         }
     }
 }

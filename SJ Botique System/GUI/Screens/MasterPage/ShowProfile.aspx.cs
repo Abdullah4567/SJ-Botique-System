@@ -56,13 +56,6 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                 else
                 {
                     ShowData();
-
-                    // Integration For Button of Show Profile 
-                    //string whichPage = Request.QueryString["from"]; // Use of Query String 
-                    //if (whichPage == "workShiftButton")
-                    //{
-                    //    ShowData();
-                    //}
                 }
             }
         }
