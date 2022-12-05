@@ -19,7 +19,7 @@ Age int NOT NULL check (Age>0 and Age <100),
 Email nvarchar(50) NOT NULL,
 CreatedAt datetime NOT NULL,
 Contact nvarchar(30) NOT NULL,
-[Password] varchar(20) NOT NULL
+[Password] Binary(64) NOT NULL
 )
 
 go
@@ -265,17 +265,17 @@ select * from WorkShift
 
 select * from [User]
 select * from [User_Role]
-insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111','pass123')
-insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111','pass123');
+insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'))
+insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
 select * from [Role]
 select * from User_Role
 insert into User_Role values (1,6,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
-alter Procedure log_in
+create Procedure log_in
 @email nvarchar(50),
-@pass nvarchar(30),
+@pass nvarchar(64),
 @userid int output,
 @roleName nvarchar(30) output
 As Begin
@@ -283,12 +283,11 @@ As Begin
 	set @userid = -1
 	set @roleid = -1
 	Set @roleName='unknown';
-
-	if EXISTS(Select * from [User] u where u.Email = @email and u.Password = @pass)
+	if EXISTS(Select * from [User] u where u.Email = @email and u.Password = Hashbytes('SHA2_512', @pass))
 	Begin
 		Select @userid = u.Id, @roleid = ur.Role_Id from [User] u 
 		JOIN User_Role ur on u.Id = ur.Id
-		where u.Email = @email and u.Password = @pass;
+		where u.Email = @email
 		Select  @roleName=R.Name from [Role] R  where R.Id= @roleId;
 	End
 End
@@ -303,7 +302,7 @@ Create procedure sign_up
 @age int,
 @email nvarchar(50),
 @contact nvarchar(30),
-@pass nvarchar(20),
+@pass nvarchar(64),
 @userId int output
 
 As Begin
@@ -314,7 +313,7 @@ As Begin
 		set @userId = 0
 	else begin
 		
-		INSERT INTO [User] values(@name, @address, @age, @email,GETDATE(), @contact, @pass)
+		INSERT INTO [User] values(@name, @address, @age, @email,GETDATE(), @contact, Hashbytes('SHA2_512',@pass))
 
 		declare @uid int
 		Select @uid = u.Id from [User] u where u.Email = @email
@@ -323,4 +322,5 @@ As Begin
 		set @userId = @uid;
 	end
 end
+
 
