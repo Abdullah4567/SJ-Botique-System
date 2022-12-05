@@ -32,7 +32,7 @@
                     <!--<img src="../../imgs/SJ%20Boutique.png" />-->
                  S & J Boutique
                 </a>
-                    <asp:LinkButton ID="btnAbout" runat="server" Text="About Us" CssClass="nav-link mt-1" Font-Size="Large" ForeColor="Black"/>
+                    <asp:LinkButton ID="btnAbout" runat="server" Text="About Us" CssClass="nav-link mt-1" Font-Size="Large" ForeColor="Black" OnClick="btnAbout_Click"/>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Frequently Asked Questions</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click">Frequently Asked Questions</asp:LinkButton>
                             &nbsp;
                             <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click">Created By</asp:LinkButton>
                             &nbsp;
