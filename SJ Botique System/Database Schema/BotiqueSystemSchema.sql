@@ -85,7 +85,8 @@ create table Product
 (Id int Identity(1,1) primary key,
 [Name] nvarchar(30) NOT NULL,
 Price float NOT NULL,
-Quantity int NOT NULL CHECK(quantity >0 and quantity < 1000)
+Quantity int NOT NULL CHECK(quantity >0 and quantity < 1000),
+[Description] nvarchar(100)
 )
 
 go
@@ -213,6 +214,7 @@ INSERT INTO [Role] values ('Floor Manager', 'A company employee in charge of an 
 INSERT INTO [Role] values ('Inventory Manager', 'A company employee managing inventory and policies')
 INSERT INTO [Role] values ('Store Manager', 'A company employee monitoring duties of an outlet')
 INSERT INTO [Role] values ('Admin', 'A company head in charge of all outlets, employees and customers')
+INSERT INTO [Role] values ('Supplier', 'Person in charge of supplying products to the inventory')
 
 INSERT INTO Permission values ('Order', 'Place/cancel order and buy/return products')
 INSERT INTO Permission values ('Mark Attendance', 'Mark attendance at a particular date')
@@ -242,16 +244,15 @@ INSERT INTO Role_Permission values (6, 10)
 INSERT INTO Role_Permission values (6, 11)
 --select * from Role_Permission
 
-Insert into Product ([Name],[Price],[Quantity]) values ('Shirt',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Bags',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Covers',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Jackets',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Hoodies',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Pents',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Shoes',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Suits',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('Sandals',250,10)
-Insert into Product ([Name],[Price],[Quantity]) values ('CottonShirt',250,10)
+Insert into Product values ('Shirt',449,50, 'A plain polo T-Shirt available in all sizes for men')
+Insert into Product values ('Bags',899,10, 'Snake skin bag made from top quality imported material')
+Insert into Product values ('Jackets',1199,25, 'Blue denim jacket part of S&M unisex clothing line')
+Insert into Product values ('Hoodies',799,25, 'Loose fitting hooded sweater part of S&M unisex clothing line')
+Insert into Product values ('Pants',599,50, 'Courdroy pants perfect for casual and semi-formal dressing')
+Insert into Product values ('Shoes',1899,40, 'Perfectly all rounded hiking boots made for the roughest of terrains')
+Insert into Product values ('Suits',8999,10, 'Eye catching 3-piece and 2-piece suits custom fitted to your needs')
+Insert into Product values ('Sandals',499,50, 'Comfortable and casual wear sandals ideal for daily use')
+Insert into Product values ('CottonShirt',1099,30, 'Semi-formal shirt made from soft and breathable cotton')
 
 delete from WorkShift
 insert into WorkShift values ('Evening', DATEADD(hour, 0, GetDate()),DATEADD(hour, 2, GetDate()))
