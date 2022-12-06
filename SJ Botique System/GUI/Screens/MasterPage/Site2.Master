@@ -122,9 +122,9 @@
                     </a>
                 </div>
                 <div class="row">
-                    <asp:LinkButton class="m-2 p-2 navbar-brand text-secondary mr-5" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" Visible="false">Home</asp:LinkButton>
-                    <asp:LinkButton class="m-2 p-2 navbar-brand text-secondary mr-5" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click">Hello user</asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="m-2 p-2 navbar-brand text-secondary" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                    <asp:LinkButton class="m-2 p-2 navbar-brand text-info mr-2" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click" Visible="false">Home</asp:LinkButton>
+                    <asp:LinkButton class="m-2 p-2 navbar-brand text-info mr-2" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click">Hello user</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="m-2 p-2 navbar-brand text-info mr-2" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
                     <%--<a class="navbar-brand text-secondary" href="#"></a>--%>
                 </div>
             </div>

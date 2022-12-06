@@ -262,26 +262,30 @@ insert into WorkShift values ('Evening', DATEADD(hour, 7, GetDate()),DATEADD(hou
 select * from WorkShift
 
 -- select * from Product
-DBCC CHECKIDENT('User', RESEED, 0)
+--DBCC CHECKIDENT('User', RESEED, 0)
 
-delete from [User]
+--delete from [User]
 select * from [User_Role]
-insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'))
-insert into [User] values ('InventoryManager1','Block123',21,'im@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
-insert into [User] values ('FloorManager1','Block123',21,'fm@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
-
+go
+insert into [User] values ('M.Abdullah','Block123',21,'admin@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123')) -- Admin
+insert into [User] values ('Kashan Aqeel','Block123',21,'im@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123')); -- Inventory Manager
+insert into [User] values ('Muneeb Arshad','Block123',21,'fm@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123')); -- Floor Manager
+insert into [User] values ('Khushnood Saeed','Block123',21,'cust@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123')); --Customer
+go
 
 select * from [User]
 select * from [Role]
-select * from User_Role
+--select * from User_Role
+go
 insert into User_Role values (1,6,NULL,0,NULL)
 insert into User_Role values (2,4,NULL,0,NULL)
 insert into User_Role values (3,3,NULL,0,NULL)
-insert into User_Role values (6,4,NULL,0,NULL)
+insert into User_Role values (4,1,NULL,0,NULL)
+go
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
-alter Procedure log_in
+create Procedure log_in
 @email nvarchar(50),
 @pass nvarchar(64),
 @userid int output,
