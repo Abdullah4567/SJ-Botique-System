@@ -150,7 +150,7 @@
                                     <button type="button" id="btnUserManagement" class="btn btn-outline-info btn-md btn-block text-md-center" runat="server" visible="false">User Management</button>
                                 </li>
                                 <li class="mb-auto p-2">
-                                    <button type="button" id="btnRoleManagement" class="btn btn-outline-info btn-md btn-block text-md-center" runat="server" visible="false">Role Management</button>
+                                    <button type="button" id="btnRoleManagement" class="btn btn-outline-info btn-md btn-block text-md-center" onserverclick="roleManagement" runat="server" visible="false">Role Management</button>
                                 </li>
                                 <li class="mb-auto p-2">
                                     <button type="button" id="btnOutlet" class="btn btn-outline-info btn-md btn-block" runat="server" visible="false">Outlet Operations</button>
@@ -187,34 +187,6 @@
         <!-- Main Content Placeholder -->
 
         <!-- Footer -->
-        <%-- <footer>
-            <div id="footer1" class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
-                            &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Frequently Asked Questions</asp:LinkButton>
-                            &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click">">Created By</asp:LinkButton>
-                            &nbsp;
-                        </p>
-
-                    </div>
-
-                </div>
-            </div>
-            <div id="footer2" class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">&copy All right Reserved. &nbsp&nbsp <a href='https://www.facebook.com/' target="_blank"><i class="fa-brands fa-facebook mr-auto" ></i></a>&nbsp&nbsp <a href='https://web.whatsapp.com/' target="_blank"><i class="fa-brands fa-whatsapp mr-auto"></i></a>&nbsp&nbsp<i class="fa-brands fa-instagram mr-auto"></i></p>
-                    </div>
-                </div>
-            </div>
-
-
-        </footer>
-        <!-- ./Footer -->--%>
     </form>
 </body>
 </html>

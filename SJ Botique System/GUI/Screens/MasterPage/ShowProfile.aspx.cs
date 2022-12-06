@@ -57,9 +57,13 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                 {
                     ShowData();
                 }
+                string roleName = Session["roleName"].ToString();
+                if (roleName == "Customer")
+                {
+                    LinkButton1.Visible = false;
+                }
             }
         }
-
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             string role = Session["roleName"].ToString();

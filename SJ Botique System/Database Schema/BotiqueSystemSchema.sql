@@ -277,6 +277,7 @@ select * from User_Role
 insert into User_Role values (1,6,NULL,0,NULL)
 insert into User_Role values (2,4,NULL,0,NULL)
 insert into User_Role values (3,3,NULL,0,NULL)
+insert into User_Role values (6,4,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]

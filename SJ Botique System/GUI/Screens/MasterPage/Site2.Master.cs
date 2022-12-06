@@ -45,6 +45,10 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
             Response.Redirect("InventoryManager.aspx?from=PolicyButton");
         }
+        protected void roleManagement(object sender, EventArgs e)
+        {
+            Response.Redirect("Admin.aspx?from=roleManagement");
+        }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
@@ -60,5 +64,6 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
             //Response.Redirect("ShowProfile.aspx");
         }
+
     }
 }

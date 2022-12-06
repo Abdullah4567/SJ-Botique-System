@@ -13,5 +13,14 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
 
     public partial class WebForm1
     {
+
+        /// <summary>
+        /// roleGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView roleGridView;
     }
 }
