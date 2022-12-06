@@ -13,7 +13,7 @@
     <link href="../../fontawesome/css/all.css" rel="stylesheet" />
     <%--jquery--%>
     <script src="../../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
-     <%--my custom stylesheet--%>
+    <%--my custom stylesheet--%>
     <link href="../../mycss/css.css" rel="stylesheet" />
     <%--popper js--%>
     <script src="../../bootstrap/js/popper.min.js"></script>
@@ -26,13 +26,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <div>
+        <div>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">
                     <!--<img src="../../imgs/SJ%20Boutique.png" />-->
-                 S & J Boutique
+                    S & J Boutique
                 </a>
-                    <asp:LinkButton ID="btnAbout" runat="server" Text="About Us" CssClass="nav-link mt-1" Font-Size="Large" ForeColor="Black" OnClick="btnAbout_Click"/>
+                <asp:LinkButton ID="btnAbout" runat="server" Text="About Us" CssClass="nav-link mt-1" Font-Size="Large" ForeColor="Black" OnClick="btnAbout_Click" />
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -40,18 +40,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                          
-                        </li>
-                        <li class="nav-item active">
-                            
-                        </li>
+                        <li class="nav-item active"></li>
+                        <li class="nav-item active"></li>
 
                     </ul>
 
                     <ul class="navbar-nav">
                         <li>
-                            <asp:LinkButton class="nav-link" ID="homeButton"  runat="server" OnClick="btnHome_Click"> Home </asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="homeButton" runat="server" OnClick="btnHome_Click"> Home </asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="btnLogout" runat="server" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
@@ -67,7 +63,7 @@
 
             </nav>
         </div>
-             
+
         <!-- Main Content Placeholder -->
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -75,8 +71,8 @@
         </div>
         <!-- Main Content Placeholder -->
 
-            <!-- Footer -->
-    <footer>
+        <!-- Footer -->
+        <footer>
             <div id="footer1" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -94,7 +90,7 @@
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">&copy All right Reserved. &nbsp&nbsp <a href='https://www.facebook.com/' target="_blank"><i class="fa-brands fa-facebook mr-auto" ></i></a>&nbsp&nbsp <a href='https://web.whatsapp.com/' target="_blank"><i class="fa-brands fa-whatsapp mr-auto"></i></a>&nbsp&nbsp<a href='https://www.instagram.com/' target="_blank"><i class="fa-brands fa-instagram mr-auto"></i></a></p>
+                        <p style="color: whitesmoke">&copy All right Reserved. &nbsp&nbsp <a href='https://www.facebook.com/' target="_blank"><i class="fa-brands fa-facebook mr-auto"></i></a>&nbsp&nbsp <a href='https://web.whatsapp.com/' target="_blank"><i class="fa-brands fa-whatsapp mr-auto"></i></a>&nbsp&nbsp<a href='https://www.instagram.com/' target="_blank"><i class="fa-brands fa-instagram mr-auto"></i></a></p>
                     </div>
                 </div>
             </div>

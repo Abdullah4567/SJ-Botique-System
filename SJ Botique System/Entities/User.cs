@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SJ_Botique_System.Interfaces;
+using System.Text;
 
 namespace SJ_Botique_System.Entities
 {

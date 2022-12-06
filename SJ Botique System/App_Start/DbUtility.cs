@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace SJ_Botique_System.App_Start
 {
@@ -64,7 +65,7 @@ namespace SJ_Botique_System.App_Start
             }
 
         }
-        public static int AddWorkshift(string SQL,WorkShift Obj)
+        public static int AddWorkshift(string SQL, WorkShift Obj)
         {
             try
             {
@@ -117,7 +118,7 @@ namespace SJ_Botique_System.App_Start
             }
 
         }
-        public static int DeleteWorkshift(string SQL,int Id)
+        public static int DeleteWorkshift(string SQL, int Id)
         {
             try
             {
@@ -149,7 +150,6 @@ namespace SJ_Botique_System.App_Start
                 {
                     using (SqlCommand dataCommand = new SqlCommand(NameOfProcedure, dataConnection))
                     {
-                        //dataCommand.CommandText = SQL;
                         dataCommand.CommandType = CommandType.StoredProcedure;
                         dataConnection.Open();
                         dataCommand.Parameters.Add(new SqlParameter("@Name", Name));
@@ -162,8 +162,6 @@ namespace SJ_Botique_System.App_Start
                         dataCommand.Parameters["@userId"].Direction = ParameterDirection.Output;
                         dataCommand.ExecuteNonQuery();
                         int res = Convert.ToInt32(dataCommand.Parameters["@userId"].Value);
-                        // cmd.Parameters["@Name"].Direction = ParameterDirection.Output;
-
                         return res;
                     }
                 }
@@ -186,11 +184,11 @@ namespace SJ_Botique_System.App_Start
                         //dataCommand.CommandText = SQL;
                         dataCommand.CommandType = CommandType.StoredProcedure;
                         dataConnection.Open();
-                       
+
                         dataCommand.Parameters.Add(new SqlParameter("@Email", Email));
                         dataCommand.Parameters.Add(new SqlParameter("@Pass", Password));
                         dataCommand.Parameters.Add(new SqlParameter("@userid", SqlDbType.Int));
-                        dataCommand.Parameters.Add(new SqlParameter("@roleName", SqlDbType.NVarChar,30));
+                        dataCommand.Parameters.Add(new SqlParameter("@roleName", SqlDbType.NVarChar, 30));
                         dataCommand.Parameters["@userid"].Direction = ParameterDirection.Output;
                         dataCommand.Parameters["@roleName"].Direction = ParameterDirection.Output;
                         dataCommand.ExecuteNonQuery();
