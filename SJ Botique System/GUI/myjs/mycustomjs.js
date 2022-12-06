@@ -1,9 +1,9 @@
 ﻿function toggle() {
-    var x = document.getElementById("inputpass");
-    if (x.type === "password") {
-        x.type = "text";
+    var x = document.getElementById("pass");
+    if (x.TextMode === "password") {
+        x.TextMode = "text";
     } else {
-        x.type = "password";
+        x.TextMode = "password";
     }
 }
 

@@ -7,6 +7,7 @@ namespace SJ_Botique_System.Entities
 {
     public class DiscountPolicy:Policy
     {
+        string Type;
         //Methods
        override public void  AddPolicy()
         {
@@ -18,10 +19,13 @@ namespace SJ_Botique_System.Entities
 
 
         }
+        override public string GetPolicyType()
+        {
+            return this.Type;
+        }
         public DiscountPolicy(int _id,string _description):base( _id, _description)
-        { 
-        
-        
+        {
+            this.Type = "Discount Policy";
         }
     }
 }

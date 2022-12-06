@@ -12,7 +12,26 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            string role = Session["roleName"].ToString();
+            if (role=="Admin")
+            {
+                btnUserManagement.Visible = true;
+                btnRoleManagement.Visible = true;
+                btnOutlet.Visible = true;
+            }
+            else if(role== "Floor Manager")
+            {
+                btnWorkshift.Visible = true;
+                btnPerformance.Visible = true;
+                btnAttendance.Visible = true;
+            }
+            else if (role== "Inventory Manager")
+            {
+                btnSalesReport.Visible = true;
+                btnSupplier.Visible = true;
+                btnPolicy.Visible = true;
 
+            }
         }
         protected void LinkButton12_Click(object sender, EventArgs e)
         {
@@ -21,6 +40,25 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         protected void workShift(object sender, EventArgs e)
         {
             Response.Redirect("FloorManager.aspx?from=workShiftButton");
+        }
+        protected void DisplayPolicy(object sender, EventArgs e)
+        {
+            Response.Redirect("InventoryManager.aspx?from=PolicyButton");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void LinkButton7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShowProfile.aspx");
+        }
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("ShowProfile.aspx");
         }
     }
 }

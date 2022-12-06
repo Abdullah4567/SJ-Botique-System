@@ -284,15 +284,25 @@ As Begin
 	set @userid = -1
 	set @roleid = -1
 	Set @roleName='unknown';
-	if EXISTS(Select * from [User] u where u.Email = @email and u.Password = Hashbytes('SHA2_512', @pass))
+
+	if EXISTS(Select * from [User] u where u.Email=@email and u.Password = Hashbytes('SHA2_512', @pass))
 	Begin
+		print 'Hello'
 		Select @userid = u.Id, @roleid = ur.Role_Id from [User] u 
-		JOIN User_Role ur on u.Id = ur.Id
+		JOIN User_Role ur on u.Id = ur.U_ID
 		where u.Email = @email
 		Select  @roleName=R.Name from [Role] R  where R.Id= @roleId;
 	End
 End
+
+--declare @userId1 int 
+--declare @rolename1 nvarchar(30)
+--exec [dbo].log_in @email='ali@gmail.com' , @pass= 'pass123', @userid=@userId1 output , @roleName=@roleName1 output
+--select @userId1 as Val
+
 select * from [User]
+select * from [User_Role]
+select * from [Role]
 ------ SIGNUP PROCEDURE ------
 
 --drop procedure sign_up
@@ -323,5 +333,3 @@ As Begin
 		set @userId = @uid;
 	end
 end
-
-

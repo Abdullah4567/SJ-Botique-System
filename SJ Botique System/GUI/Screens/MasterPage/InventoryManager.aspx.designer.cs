@@ -15,6 +15,15 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
     {
 
         /// <summary>
+        /// InventoryManagerContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl InventoryManagerContent;
+
+        /// <summary>
         /// GridView2 control.
         /// </summary>
         /// <remarks>
