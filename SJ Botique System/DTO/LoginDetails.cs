@@ -9,11 +9,13 @@ namespace SJ_Botique_System.DTO
     {
         public int UserId;
         public string RollName;
+        public string Name;
 
-        public LoginDetails(int _userId, string _roleName)
+        public LoginDetails(int _userId, string _roleName, string _name)
         {
             this.UserId = _userId;
             this.RollName = _roleName;
+            this.Name = _name;
         }
     }
 }

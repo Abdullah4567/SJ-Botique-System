@@ -13,6 +13,8 @@ namespace SJ_Botique_System.GUI
         {
             string Id = (Session["userId"]?.ToString())?.Trim();
             string roleName = (Session["roleName"]?.ToString())?.Trim();
+            string Name = Session["Name"]?.ToString()?.Trim();
+            btnUser.Text = Name;
             if (String.IsNullOrEmpty(Id) || roleName!="Customer")
             {
                 // Dont want to Show it on Sign Up Page

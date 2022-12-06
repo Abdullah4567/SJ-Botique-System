@@ -47,6 +47,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                         newCustomer.SetId(UserId);
                         Session["userId"] = UserId;
                         Session["roleName"] = "Customer";
+                        Session["Name"] = Name;
                         Response.Redirect("DisplayProducts.aspx");
                     }
                     else

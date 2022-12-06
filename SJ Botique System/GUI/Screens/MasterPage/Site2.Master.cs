@@ -13,6 +13,8 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         {
 
             string role = Session["roleName"].ToString();
+            string Name = Session["Name"]?.ToString()?.Trim();
+            LinkButton7.Text = Name;
             if (role=="Admin")
             {
                 btnUserManagement.Visible = true;

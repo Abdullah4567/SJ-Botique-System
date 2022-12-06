@@ -34,6 +34,7 @@ namespace SJ_Botique_System.GUI.Screens.Master_Page
                 // Valid User 
                 Session["userId"] = CurrentUser.UserId;
                 Session["roleName"] = CurrentUser.RollName;
+                Session["Name"] = CurrentUser.Name;
                 if (CurrentUser.RollName == "Admin")
                 {
                    Response.Redirect("Admin.aspx");

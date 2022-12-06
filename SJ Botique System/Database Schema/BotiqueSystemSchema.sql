@@ -281,21 +281,22 @@ insert into User_Role values (6,4,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
-create Procedure log_in
+alter Procedure log_in
 @email nvarchar(50),
 @pass nvarchar(64),
 @userid int output,
-@roleName nvarchar(30) output
+@roleName nvarchar(30) output,
+@Name nvarchar(30) output
 As Begin
 	Declare @roleId int =-1;
 	set @userid = -1
 	set @roleid = -1
 	Set @roleName='unknown';
+	Set @Name='unknown';
 
 	if EXISTS(Select * from [User] u where u.Email=@email and u.Password = Hashbytes('SHA2_512', @pass))
 	Begin
-		print 'Hello'
-		Select @userid = u.Id, @roleid = ur.Role_Id from [User] u 
+		Select @userid = u.Id, @roleid = ur.Role_Id, @Name=u.Name from [User] u 
 		JOIN User_Role ur on u.Id = ur.U_ID
 		where u.Email = @email
 		Select  @roleName=R.Name from [Role] R  where R.Id= @roleId;

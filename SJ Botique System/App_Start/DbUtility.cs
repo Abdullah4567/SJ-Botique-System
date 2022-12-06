@@ -189,13 +189,15 @@ namespace SJ_Botique_System.App_Start
                         dataCommand.Parameters.Add(new SqlParameter("@Pass", Password));
                         dataCommand.Parameters.Add(new SqlParameter("@userid", SqlDbType.Int));
                         dataCommand.Parameters.Add(new SqlParameter("@roleName", SqlDbType.NVarChar, 30));
+                        dataCommand.Parameters.Add(new SqlParameter("@Name", SqlDbType.NVarChar, 30));
                         dataCommand.Parameters["@userid"].Direction = ParameterDirection.Output;
-                        dataCommand.Parameters["@roleName"].Direction = ParameterDirection.Output;
+                        dataCommand.Parameters["@roleName"].Direction = ParameterDirection.Output; 
+                        dataCommand.Parameters["@Name"].Direction = ParameterDirection.Output;
                         dataCommand.ExecuteNonQuery();
                         int userId = Convert.ToInt32(dataCommand.Parameters["@userid"].Value);
                         string RoleName = (string)dataCommand.Parameters["@roleName"].Value;
-
-                        return new LoginDetails(userId, RoleName);  // using DTO to transfer Data to code Behind File
+                        string Name = (string)dataCommand.Parameters["@Name"].Value;
+                        return new LoginDetails(userId, RoleName,Name);  // using DTO to transfer Data to code Behind File
                     }
                 }
             }
