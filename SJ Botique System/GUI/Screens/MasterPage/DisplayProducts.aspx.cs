@@ -15,7 +15,9 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //getting userId session variable
             string Id = (Session["userId"]?.ToString())?.Trim();
+            //if Id is NULL
             if (String.IsNullOrEmpty(Id))
             {
                 Response.Redirect("Login.aspx");
@@ -28,15 +30,22 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         protected void ShowProducts()
         {
             StringBuilder query = new StringBuilder();
+            //Creating List of Product objects to collect all products
             List<Product> Collection = new List<Product>();
-            // Code Working Fine for Show All Products
+            // Clearing the query
             query.Clear();
+            //Appending the query
             query.Append($"SELECT Id, Name, Description , Price FROM Product");
+            //Getting the dataTable from database through DbUtility
             var result = DbUtility.GetDataTable(query.ToString());
+            //Avoiding extra columns
             GridView1.AutoGenerateColumns = false;
+            //Populating data in GridView
             GridView1.DataSource = result;
+            //Binding Data in GridView
             GridView1.DataBind();
 
+            //Collecting all the Product objects in List named Collection
             foreach (DataRow row in result.Rows)
             {
                 int Id = Convert.ToInt32(row["Id"]);

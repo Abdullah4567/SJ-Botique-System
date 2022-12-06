@@ -8,12 +8,15 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <%-- HomePage top picture--%>
     <img src="../../imgs/upper-img-home.png" />
     <hr />
     <center>
+        <%-- Title on Top of Page--%>
         <h1>All Products</h1>
     </center>
     <hr />
+    <%-- Rows and Cols in Card including GridView--%>
     <div class="row justify-content-center">
         <div class="card">
             <div class="card-body">
