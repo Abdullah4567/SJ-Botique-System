@@ -10,11 +10,12 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
-       
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Method will be called at Page Load 
             if(!IsPostBack)
             {
+                // Checking if the user is authenticated or not.
                 string Id = (Session["userId"]?.ToString())?.Trim();
                 if (String.IsNullOrEmpty(Id))
                 {
@@ -36,15 +37,16 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         }
         protected void ShowData()
         {
-            List<WorkShift> Collection = new List<WorkShift>();
+            // Function used to Print Data by binding on Grid View
+            List<WorkShift> Collection = new List<WorkShift>(); // Making List of WorkShifts
             StringBuilder query = new StringBuilder();
             query.Clear();
-            query.Append($"Select Id,Name, Time_in, Time_out from WorkShift");
+            query.Append($"Select Id,Name, Time_in, Time_out from WorkShift"); // Query to get data about Workshift
             var result = DbUtility.GetDataTable(query.ToString());
-            if(result.Rows.Count>0)
+            if(result.Rows.Count>0) // If No Data found from DB
             {
                 gridWorkShift.DataSource = result;
-                gridWorkShift.DataBind();
+                gridWorkShift.DataBind(); // Data Binding
 
                 // code to Make List of WorkShifts
                 foreach (DataRow row in result.Rows)
@@ -53,19 +55,20 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                     string Name = row["Name"].ToString();
                     string Time_In = row["Time_in"].ToString();
                     string Time_Out = row["Time_out"].ToString();
-                    WorkShift W = new WorkShift(Name, Time_In, Time_Out);
+                    WorkShift W = new WorkShift(Name, Time_In, Time_Out); // instantiating an Object
                     W.SetId(Id);
-                    Collection.Add(W); // Creating List for Workshifts
+                    Collection.Add(W); // Adding  List for Workshifts
                 }
             }
             else
             {
+                // Adding new row in Table if no row returned from DB
                 result.Rows.Add(result.NewRow());
                 gridWorkShift.DataSource = result;
                 gridWorkShift.DataBind();
                 gridWorkShift.Rows[0].Cells.Clear();
-                gridWorkShift.Rows[0].Cells.Add(new TableCell());
-                gridWorkShift.Rows[0].Cells[0].ColumnSpan = gridWorkShift.Columns.Count;
+                gridWorkShift.Rows[0].Cells.Add(new TableCell()); // Adding new cell 
+                gridWorkShift.Rows[0].Cells[0].ColumnSpan = gridWorkShift.Columns.Count; // Changing span of column 
                 gridWorkShift.Rows[0].Cells[0].Text = "No WorkShift Created Yet !";
                 gridWorkShift.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
             }
@@ -78,7 +81,6 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                 StringBuilder query = new StringBuilder();
                 if (e.CommandName.Equals("Add"))
                 {
-
                     // Code to Add New Workshift  Executed for Footer Row
                     query.Clear();
                     query.Append("Insert into WorkShift (Name, Time_in, Time_out) values (@Name, @Time_in, @Time_out)");
@@ -87,8 +89,9 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                     string T_out = (gridWorkShift.FooterRow.FindControl("txtTimeOutFooter") as TextBox).Text.Trim();
                     if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(T_in) && !String.IsNullOrEmpty(T_out))
                     {
+                        // checking Null Strings
                         WorkShift Obj = new WorkShift(Name,T_in, T_out);
-                        var result = DbUtility.AddWorkshift(query.ToString(),Obj);
+                        var result = DbUtility.AddWorkshift(query.ToString(),Obj); // reteriving data from DB
                         ShowData();
                         Success.Text = "New WorkShift Added";
                         Failture.Text = "";
@@ -112,10 +115,10 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
             // Editing Work Shift
             try
             {
+                // getting index of field want to edit
                 gridWorkShift.EditIndex = e.NewEditIndex;
                 var Id = e.NewEditIndex;
                 ShowData();
-
             }
             catch (Exception ex)
             {
@@ -129,7 +132,7 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
             // Code to Cancel Editing 
             try
             {
-                gridWorkShift.EditIndex = -1;
+                gridWorkShift.EditIndex = -1; // removing editing index
                 ShowData();
             }
             catch (Exception ex)
@@ -145,6 +148,7 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                 // Code to Update Workshift
                 StringBuilder query = new StringBuilder();
                 query.Clear();
+                // Update query to change attributes of Workshift
                 query.Append("Update WorkShift Set Name=@Name , Time_in = @Time_in , Time_out=@Time_out where Id = @Id");
                 int Id = Convert.ToInt32(gridWorkShift.DataKeys[e.RowIndex].Value.ToString());
                 string Name = (gridWorkShift.Rows[e.RowIndex].FindControl("txtName") as TextBox).Text.Trim();
@@ -152,9 +156,10 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                 string T_out = (gridWorkShift.Rows[e.RowIndex].FindControl("txtTimeOut") as TextBox).Text.Trim();
                 if (!String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(T_in) && !String.IsNullOrEmpty(T_out))
                 {
+                    // checking null strings 
                     DateTime Time_in = DateTime.Parse(T_in);
                     DateTime Time_out = DateTime.Parse(T_out);
-                    var result = DbUtility.UpdateWorkshift(query.ToString(), Name, Time_in, Time_out, Id);
+                    var result = DbUtility.UpdateWorkshift(query.ToString(), Name, Time_in, Time_out, Id); // firing query 
                     gridWorkShift.EditIndex = -1;
                     ShowData();
                     Success.Text = "WorkShift has been Updated ";
