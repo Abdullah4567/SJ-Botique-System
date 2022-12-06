@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="FAQ.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.FAQ" %>
+﻿<%@ Page Title="S&J-FAQ" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="FAQ.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.FAQ" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

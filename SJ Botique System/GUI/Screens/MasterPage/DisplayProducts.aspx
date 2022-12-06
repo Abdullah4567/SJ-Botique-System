@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="DisplayProducts.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.WebForm4" %>
+﻿<%@ Page Title="S&J-Products" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="DisplayProducts.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.WebForm4" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>  

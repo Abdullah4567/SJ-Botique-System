@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site2.Master" AutoEventWireup="true" CodeBehind="InventoryManager.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.WebForm2" EnableEventValidation="false" %>
+﻿<%@ Page Title="S&J-InventoryManager" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site2.Master" AutoEventWireup="true" CodeBehind="InventoryManager.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.WebForm2" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="ShowProfile.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.ShowProfile" %>
+﻿<%@ Page Title="S&J-Profile" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="ShowProfile.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.ShowProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
