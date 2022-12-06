@@ -13,25 +13,24 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-
         protected void ShowData()
         {
             try
             {
-                StringBuilder query = new StringBuilder();
-                List<Role> Collection = new List<Role>();
+                StringBuilder query = new StringBuilder();                          // new stringbuilder object
+                List<Role> Collection = new List<Role>();                           // list of all roles
                 query.Clear();
-                query.Append($"SELECT Id, Name , Description FROM [Role]");
-                var result = DbUtility.GetDataTable(query.ToString());
-                foreach (DataRow row in result.Rows)
+                query.Append($"SELECT Id, Name , Description FROM [Role]");         // add query to the string
+                var result = DbUtility.GetDataTable(query.ToString());              // get datatable using DbUtility
+                foreach (DataRow row in result.Rows)                                
                 {
-                    int Id = Convert.ToInt32(row["Id"]);
+                    int Id = Convert.ToInt32(row["Id"]);                            // Populate the Role class with id, name, description
                     string Name = row["Name"].ToString();
                     string Description = row["Description"].ToString();
-                    Collection.Add(new Role(Id, Name, Description));
+                    Collection.Add(new Role(Id, Name, Description));                // add role details to the list
                 }
-                roleGridView.DataSource = result;
-                roleGridView.DataBind();
+                roleGridView.DataSource = result;                                   // set data source of the GridView
+                roleGridView.DataBind();                                            // binds the data source to the GridView
             }
             catch (Exception ex)
             {
@@ -40,19 +39,19 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack)                                            // first load of page
             {
-                string Id = (Session["userId"]?.ToString())?.Trim();
-                if (String.IsNullOrEmpty(Id))
+                string Id = (Session["userId"]?.ToString())?.Trim();    // get userid 
+                if (String.IsNullOrEmpty(Id))                           // if no user logged in
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("Login.aspx");                    // Redirect user to the log in page
                 }
                 else
                 {
                     string whichPage = Request.QueryString["from"]; // Use of Query String 
-                    if (whichPage == "roleManagement")
+                    if (whichPage == "roleManagement")              // if admin visiting website
                     {
-                        ShowData();
+                        ShowData();                                 // show roles of all users
                     }
                 }
             }
