@@ -28,11 +28,11 @@
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand text-info" href="#">
+                <a class="navbar-brand text-dark" href="#">
                     <!--<img src="../../imgs/SJ%20Boutique.png" />-->
                     S & J Boutique
                 </a>
-                <asp:LinkButton ID="btnAbout" runat="server" CssClass="navbar-brand text-info ml-2 " Font-Size="Large" ForeColor="Black" OnClick="btnAbout_Click">About Us </asp:LinkButton>
+                <asp:LinkButton ID="btnAbout" runat="server" CssClass="navbar-brand text-dark ml-2 " Font-Size="Large" ForeColor="Black" OnClick="btnAbout_Click">About Us </asp:LinkButton>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
 
                     <ul class="navbar-nav">
                         <li>
-                            <asp:LinkButton class="nav-link" CssClass="bg-dark" ID="homeButton" runat="server" OnClick="btnHome_Click"> Home </asp:LinkButton>
+                            <asp:LinkButton class="nav-link text-dark"  ID="homeButton" runat="server" OnClick="btnHome_Click"> Home </asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="btnLogout" runat="server" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
