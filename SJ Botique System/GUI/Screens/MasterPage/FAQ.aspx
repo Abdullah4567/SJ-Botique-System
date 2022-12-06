@@ -23,7 +23,6 @@
         }
 
         .dropdown-content {
-            display: none;
             position:center;
             align-content: center;
             background-color: whitesmoke;
@@ -33,6 +32,7 @@
             z-index: 1;
             font-family:Candara;
             padding:1%;
+            display: none;
         }
 
         .dropdown:hover .dropdown-content {
