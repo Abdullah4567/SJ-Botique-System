@@ -35,7 +35,7 @@
                                                     <div class="row">
                                                         <div class="col-12" style="font-weight: lighter">
                                                             Description:
-                                                            <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Size="Medium" Text='<%# Eval("Name") %>'></asp:Label>
+                                                            <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Size="Medium" Text='<%# Eval("Description") %>'></asp:Label>
                                                         </div>
                                                     </div>
                                                 </div>
