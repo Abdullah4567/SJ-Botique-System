@@ -206,6 +206,7 @@
     <Content Include="GUI\imgs\SaveItem.PNG" />
     <Content Include="GUI\mycss\css.css" />
     <Content Include="GUI\Screens\MasterPage\DisplayProducts.aspx" />
+    <Content Include="GUI\Screens\MasterPage\FAQ.aspx" />
     <Content Include="GUI\Screens\MasterPage\ShowProfile.aspx" />
     <Content Include="GUI\Screens\MasterPage\Site1.Master" />
     <Content Include=".vs\ProjectSettings.json" />
@@ -2278,6 +2279,7 @@
     <Content Include="GUI\Screens\MasterPage\Login.aspx" />
     <Content Include="GUI\Screens\MasterPage\InventoryManager.aspx" />
     <Content Include="GUI\Screens\MasterPage\FloorManager.aspx" />
+    <Content Include="GUI\Screens\MasterPage\About.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -2385,6 +2387,13 @@
     <Compile Include="GUI\Screens\MasterPage\DisplayProducts.aspx.designer.cs">
       <DependentUpon>DisplayProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Screens\MasterPage\FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Screens\MasterPage\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2440,6 +2449,13 @@
     </Compile>
     <Compile Include="GUI\Screens\MasterPage\FloorManager.aspx.designer.cs">
       <DependentUpon>FloorManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Screens\MasterPage\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\OutletInventoryOperations.cs" />
     <Compile Include="Interfaces\OutletOperations.cs" />

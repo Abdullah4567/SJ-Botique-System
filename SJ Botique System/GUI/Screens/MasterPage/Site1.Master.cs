@@ -41,5 +41,15 @@ namespace SJ_Botique_System.GUI
         {
             Response.Redirect("DisplayProducts.aspx");
         }
+
+        protected void LinkButton11_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FAQ.aspx");
+        }
+
+        protected void btnAbout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("About.aspx");
+        }
     }
 }

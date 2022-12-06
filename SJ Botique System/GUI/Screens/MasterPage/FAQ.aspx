@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Screens/MasterPage/Site1.Master" AutoEventWireup="true" CodeBehind="FAQ.aspx.cs" Inherits="SJ_Botique_System.GUI.Screens.MasterPage.FAQ" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <style>
+    <style>
         .dropbtn {
             background-color: #65a6b3;
             color: white;
@@ -14,7 +15,7 @@
             border-radius: 10px;
             width: 50%;
             font-family: Candara;
-            font-size:large;
+            font-size: large;
         }
 
         .dropdown {
@@ -45,10 +46,8 @@
     </style>
 
 
-     <div style="background: linear-gradient(to top, lightgrey, whitesmoke)">
-  <center>
-
-
+    <div style="background: linear-gradient(to top, lightgrey, whitesmoke)">
+        <center>
       <h4 style="font:bold 50px verdana; padding-top:4%; padding-bottom:1%">FAQ</h4>
 
       <div style="min-height:65vh; display:flex; flex-direction:column; justify-content:space-between">
@@ -71,8 +70,7 @@
           </div>
         </div>
       <br />
-
-             <div class="dropdown">
+   <div class="dropdown">
           <button class="dropbtn">What could be the reasons of delayed delivery of my order?</button>
           <div class="dropdown-content">
           <p>Timely delivery is subject to availability of stocks and payment authorizations. In certain cases, we might request for some form of payment verification or source in order to process the order.</p>

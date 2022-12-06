@@ -262,15 +262,21 @@ insert into WorkShift values ('Evening', DATEADD(hour, 7, GetDate()),DATEADD(hou
 select * from WorkShift
 
 -- select * from Product
---DBCC CHECKIDENT('Product', RESEED, 0)
+DBCC CHECKIDENT('User', RESEED, 0)
 
-select * from [User]
+delete from [User]
 select * from [User_Role]
 insert into [User] values ('M.Abdullah','Block123',21,'abc@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'))
-insert into [User] values ('FloorManager1','Block123',21,'abcd@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
+insert into [User] values ('InventoryManager1','Block123',21,'im@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
+insert into [User] values ('FloorManager1','Block123',21,'fm@gmail.com',GetDate(),'03214561111',Hashbytes('SHA2_512',N'pass123'));
+
+
+select * from [User]
 select * from [Role]
 select * from User_Role
 insert into User_Role values (1,6,NULL,0,NULL)
+insert into User_Role values (2,4,NULL,0,NULL)
+insert into User_Role values (3,3,NULL,0,NULL)
 
 ------ LOGIN PROCEDURE ------
 --drop procedure [log_in]
@@ -301,6 +307,7 @@ End
 --select @userId1 as Val
 
 select * from [User]
+select * from Product
 select * from [User_Role]
 select * from [Role]
 ------ SIGNUP PROCEDURE ------

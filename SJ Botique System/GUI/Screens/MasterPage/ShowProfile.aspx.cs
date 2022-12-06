@@ -59,5 +59,26 @@ namespace SJ_Botique_System.GUI.Screens.MasterPage
                 }
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            string role = Session["roleName"].ToString();
+            if (role == "Admin")
+            {
+                Response.Redirect("Admin.aspx");
+            }
+            else if (role == "Floor Manager")
+            {
+                Response.Redirect("FloorManager.aspx");
+            }
+            else if (role == "Inventory Manager")
+            {
+                Response.Redirect("InventoryManager.aspx");
+            }
+            else if (role == "Customer")
+            {
+                Response.Redirect("DisplayProducts.aspx");
+            }
+        }
     }
 }
