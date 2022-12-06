@@ -116,7 +116,7 @@
                     <a data-toggle="collapse" href="#" data-target=".collapse" role="button" class="p-1">
                         <i class="fa fa-bars fa-lg"></i>
                     </a>
-                    <a class="navbar-brand text-secondary" href="#">
+                    <a class="navbar-brand text-white" href="#">
                         <!--<img src="../../imgs/SJ%20Boutique.png" />-->
                         S & J Boutique
                     </a>
