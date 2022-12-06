@@ -45,20 +45,8 @@
                 <asp:ListItem Value="Discount"> Discount Policy</asp:ListItem>
             </asp:RadioButtonList>
 
-            <%--        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Inventory" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Inventory Policy
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" value="Discount" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-           Discount Policy
-          </label>
-        </div>--%>
+          
 
-            <%--        <input id="mytextbox" type="text" style="width: 45%;height: 100px;"/>--%>
             <input type="text" name="email" id="myTextBox" runat="server" style="width: 45%; height: 100px;" />
             <br />
             <asp:Button ID="btn3" class="btn btn-primary mt-3" Text="Add" runat="server" CommandName="Add" OnClick="Add_policy" />
