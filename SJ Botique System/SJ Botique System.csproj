@@ -2466,7 +2466,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="GUI\Products\" />
-    <Folder Include="obj\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
